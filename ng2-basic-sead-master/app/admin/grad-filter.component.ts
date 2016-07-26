@@ -2,23 +2,23 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'monster-filter',
+  selector: 'grad-filter',
   outputs: ['filterChange'],
   styles: [`section {background-color: #DDD; margin: 2em 0; padding:0.4em 1em 1em; border-radius:0.4em} `],
   template: `
       <section>
         <h3>Filter</h3>
         By Name: <input type="text" [(ngModel)]="filter.byName" (input)="filterChanged()" />
-        By Power: <input type="number" [(ngModel)]="filter.byPower" (input)="filterChanged()">
+        By Course: <input type="text" [(ngModel)]="filter.byCourse" (input)="filterChanged()">
       </section>
 
   `
 })
-export class MonsterFilterComponent implements OnInit {
+export class GradFilterComponent implements OnInit {
 
   private filterChange = new EventEmitter();
 
-  private filter = {byName: '', byPower: ''};
+  private filter = {byName: '', byCourse: ''};
   constructor() { }
 
   ngOnInit() { }

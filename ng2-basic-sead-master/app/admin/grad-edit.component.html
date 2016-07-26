@@ -1,0 +1,24 @@
+<h1>Registration form</h1>
+<form [formGroup]="frmGrad" (submit)="save()" >
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" formControlName="name" autofocus>
+    <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.required">Grad has no name</p>
+    <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.minlength">Grad's name too short</p>
+    <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.maxlength">Grad's name too long</p>
+  </div>
+
+  <div class="form-group">
+    <label>Course:</label>
+    <input type="text" class="form-control" formControlName="course">
+    <p class="text-danger" *ngIf="frmGrad.controls.course.dirty && frmGrad.controls.course?.errors">Grad needs Course</p>
+  </div>
+
+  <button type="submit" [disabled]="!frmGrad.valid" class="btn btn-default">Submit</button>
+</form>
+<!--<pre>
+{{monsterToEdit | json}}
+
+</pre>-->
+
+<upload-demo></upload-demo>
