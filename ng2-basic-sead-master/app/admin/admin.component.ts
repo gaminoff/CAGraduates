@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     moduleId: module.id,
     // selector: 'selector',
-    template: `hi`
+   templateUrl: 'admin.component.html',
 })
 export class AdminComponent implements OnInit {
     constructor() { }

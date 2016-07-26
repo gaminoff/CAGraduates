@@ -11,7 +11,7 @@ export class FilterByPipe implements PipeTransform {
     return list.filter(item=>{
       return item.name.toLowerCase()
               .indexOf(filter.byName.toLowerCase()) !== -1 &&
-             (!filter.byPower || item.power === filter.byPower)
+             (!filter.byCourse || item.course === filter.byCourse)
     })
   }
 }
