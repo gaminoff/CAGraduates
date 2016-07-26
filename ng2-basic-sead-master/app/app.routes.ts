@@ -3,6 +3,7 @@ import {AppComponent} from './app.component';
 import {MonsterListComponent} from './monster/monster-list.component';
 import {MonsterComponent} from './monster/monster.component';
 import {MonsterEditComponent} from './monster/monster-edit.component';
+import {AdminComponent} from './admin/admin.component';
 import {ChatRoomComponent} from './chat/chat-room.component';
 import { RouterConfig, ROUTER_DIRECTIVES, provideRouter } from '@angular/router';
 
@@ -12,6 +13,7 @@ const routes: RouterConfig = [
   { path: 'monster/edit', component: MonsterEditComponent },
   { path: 'monster/edit/:id', component: MonsterEditComponent },
   { path: 'monster/:id/:name', component: MonsterComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'chat', component: ChatRoomComponent }
 
 ];
