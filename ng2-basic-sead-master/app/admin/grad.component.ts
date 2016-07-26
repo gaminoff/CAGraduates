@@ -10,8 +10,8 @@ import {GradModel} from './grad.model';
   // selector: 'monster-list',
   template: `
     <section *ngIf="grad">
-      <h2>Grad {{grad.name}}</h2>
       <img [src]="grad.getImgUrl()" >
+      <h2>Grad {{grad.name}}</h2>
 
     </section>
   `
