@@ -9,7 +9,7 @@ import { ContactComponent } from './contact.component';
 
 @Component({
     moduleId: module.id,
-    styleUrls: ['home.css'],
+    // styleUrls: ['home.css'],
     encapsulation: ViewEncapsulation.None,
     // selector: 'selector',
     // template: `home`
