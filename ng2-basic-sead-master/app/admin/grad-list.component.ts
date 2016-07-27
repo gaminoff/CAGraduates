@@ -47,6 +47,7 @@ export class GradListComponent implements OnInit {
 
     prmGrads.then((grads : GradModel[]) => {
       this.grads = grads;
+      console.log('this.grads: ', this.grads)
     });
 
     prmGrads.catch(err => {
