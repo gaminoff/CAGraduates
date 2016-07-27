@@ -496,7 +496,7 @@
     text-transform: none; }
 
 .grads-component-container ul.social-buttons {
-  margin-bottom: 0; }
+  margin: 5px; }
   .grads-component-container ul.social-buttons li a {
     display: block;
     background-color: #222;

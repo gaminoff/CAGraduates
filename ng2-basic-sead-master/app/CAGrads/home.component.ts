@@ -6,6 +6,7 @@ import { AboutComponent } from './about.component';
 import { TeamComponent } from './team.component';
 import { ClientsComponent } from './clients.component';
 import { ContactComponent } from './contact.component';
+import { SocialBtnsComponent } from './social-btns.component';
 
 @Component({
     moduleId: module.id,
@@ -20,7 +21,8 @@ import { ContactComponent } from './contact.component';
                     AboutComponent,
                     TeamComponent,
                     ClientsComponent,
-                    ContactComponent
+                    ContactComponent,
+                    SocialBtnsComponent
                 ]
 })
 export class HomeComponent implements OnInit {
