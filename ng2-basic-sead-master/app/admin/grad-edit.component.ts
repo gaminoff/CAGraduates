@@ -35,6 +35,13 @@ export class GradEditComponent implements OnInit {
                 console.log('in edit, ajax returned : ',  this.gradToEdit,  this.frmGrad.controls );
                 (<FormControl>this.frmGrad.controls['name']).updateValue(grad.name);
                 (<FormControl>this.frmGrad.controls['course']).updateValue(grad.course);
+                (<FormControl>this.frmGrad.controls['email']).updateValue(grad.email);
+                (<FormControl>this.frmGrad.controls['gitHub']).updateValue(grad.gitHub);
+                (<FormControl>this.frmGrad.controls['linked']).updateValue(grad.linked);
+                (<FormControl>this.frmGrad.controls['facebook']).updateValue(grad.facebook);
+                (<FormControl>this.frmGrad.controls['galery']).updateValue(grad.galery);
+                (<FormControl>this.frmGrad.controls['details']).updateValue(grad.details);
+                (<FormControl>this.frmGrad.controls['moto']).updateValue(grad.moto);
             });
         }
       });
@@ -52,9 +59,17 @@ export class GradEditComponent implements OnInit {
      this.frmGrad = this.formBuilder.group({
       name: ['',
               Validators.compose([Validators.required,
+      
                                   Validators.minLength(3),
                                   Validators.maxLength(100)])],
-      course: ['', Validators.required]
+      course: ['', Validators.required],
+      email:['',Validators.required],
+      gitHub:['',Validators.required],
+      linked:['',Validators.required],
+      facebook:['',Validators.required],
+      galery:['',Validators.required],
+      details:['',Validators.required],
+      moto:['',Validators.required]
     });
   }
 }
