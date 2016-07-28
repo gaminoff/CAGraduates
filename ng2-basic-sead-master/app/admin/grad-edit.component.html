@@ -1,67 +1,68 @@
-<h1>Registration form</h1>
-<form [formGroup]="frmGrad" (submit)="save()" >
-  <div class="form-group">
-    <label>Name:</label>
-    <input type="text" class="form-control" formControlName="name" autofocus>
-    <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.required">Grad has no name</p>
-    <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.minlength">Grad's name too short</p>
-    <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.maxlength">Grad's name too long</p>
-  </div>
+<form [formGroup]="frmGrad" (submit)="save()" class="regForm container">
+    <div>
+        <h1>Registration form</h1>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control widInp" formControlName="name" autofocus>
+            <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.required">Grad has no name</p>
+            <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.minlength">Grad's name too short</p>
+            <p class="text-danger" *ngIf="frmGrad.controls.name.dirty && frmGrad.controls.name.errors?.maxlength">Grad's name too long</p>
+        </div>
 
-  <div class="form-group">
-    <label>Course:</label>
-    <input type="text" class="form-control" formControlName="course">
-    <p class="text-danger" *ngIf="frmGrad.controls.course.dirty && frmGrad.controls.course?.errors">Grad needs Course</p>
-  </div>
+        <div class="form-group">
+            <label>Course:</label>
+            <input type="text" class="form-control widInp" formControlName="course">
+            <p class="text-danger" *ngIf="frmGrad.controls.course.dirty && frmGrad.controls.course?.errors">Grad needs Course</p>
+        </div>
 
-<div class="form-group">
-    <label>Email:</label>
-    <input type="email" class="form-control" formControlName="email">
-    <p class="text-danger" *ngIf="frmGrad.controls.email.dirty && frmGrad.controls.email?.errors">Grad needs Email</p>
-</div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control widInp" formControlName="email">
+            <p class="text-danger" *ngIf="frmGrad.controls.email.dirty && frmGrad.controls.email?.errors">Grad needs Email</p>
+        </div>
 
-<div class="form-group">
-    <label>gitHub:</label>
-    <input type="url" class="form-control" formControlName="gitHub">
-    <p class="text-danger" *ngIf="frmGrad.controls.gitHub.dirty && frmGrad.controls.gitHub?.errors">Grad needs gitHub</p>
-</div>
+        <div class="form-group">
+            <label>gitHub:</label>
+            <input type="url" class="form-control widInp" formControlName="gitHub">
+            <p class="text-danger" *ngIf="frmGrad.controls.gitHub.dirty && frmGrad.controls.gitHub?.errors">Grad needs gitHub</p>
+        </div>
 
-<div class="form-group">
-    <label>linked:</label>
-    <input type="url" class="form-control" formControlName="linked">
-    <p class="text-danger" *ngIf="frmGrad.controls.linked.dirty && frmGrad.controls.linked?.errors">Grad needs linked</p>
-</div>
+        <div class="form-group">
+            <label>linked:</label>
+            <input type="url" class="form-control widInp" formControlName="linked">
+            <p class="text-danger" *ngIf="frmGrad.controls.linked.dirty && frmGrad.controls.linked?.errors">Grad needs linked</p>
+        </div>
 
-<div class="form-group">
-    <label>facebook:</label>
-    <input type="url" class="form-control" formControlName="facebook">
-    <p class="text-danger" *ngIf="frmGrad.controls.facebook.dirty && frmGrad.controls.facebook?.errors">Grad needs facebook</p>
-</div>
+        <div class="form-group">
+            <label>facebook:</label>
+            <input type="url" class="form-control widInp" formControlName="facebook">
+            <p class="text-danger" *ngIf="frmGrad.controls.facebook.dirty && frmGrad.controls.facebook?.errors">Grad needs facebook</p>
+        </div>
 
-<div class="form-group">
-    <label>galery:</label>
-    <input type="url" class="form-control" formControlName="galery">
-    <p class="text-danger" *ngIf="frmGrad.controls.galery.dirty && frmGrad.controls.galery?.errors">Grad needs galery</p>
-</div>
+        <div class="form-group">
+            <label>galery:</label>
+            <input type="url" class="form-control widInp" formControlName="galery">
+            <p class="text-danger" *ngIf="frmGrad.controls.galery.dirty && frmGrad.controls.galery?.errors">Grad needs galery</p>
+        </div>
 
-<div class="form-group">
-    <label>details:</label>
-       <textarea name="details" rows="10" cols="30" class="form-control" formControlName="details">
+        <div class="form-group">
+            <label>details:</label>
+            <textarea name="details" rows="10" cols="30" class="form-control widInp" formControlName="details">
       The cat was playing in the garden.
       </textarea>
-    <p class="text-danger" *ngIf="frmGrad.controls.details.dirty && frmGrad.controls.details?.errors">Grad needs details</p>
-</div>
+            <p class="text-danger" *ngIf="frmGrad.controls.details.dirty && frmGrad.controls.details?.errors">Grad needs details</p>
+        </div>
 
-<div class="form-group">
-    <label>moto:</label>
-    <input type="text" class="form-control" formControlName="moto">
-    <p class="text-danger" *ngIf="frmGrad.controls.moto.dirty && frmGrad.controls.moto?.errors">Grad needs moto</p>
-</div>
+        <div class="form-group">
+            <label>moto:</label>
+            <input type="text" class="form-control widInp" formControlName="moto">
+            <p class="text-danger" *ngIf="frmGrad.controls.moto.dirty && frmGrad.controls.moto?.errors">Grad needs moto</p>
+        </div>
 
-  <button type="submit"  class="btn btn-default">Submit</button>
-  <button type="cancel"  class="btn btn-default">Cancel</button>
-  <button type="reset"  class="btn btn-default">Reset</button>
-  
+        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="cancel" class="btn btn-default">Cancel</button>
+        <button type="reset" class="btn btn-default">Reset</button>
+    </div>
 </form>
 <!--[disabled]="!frmGrad.valid"-->
 
@@ -71,4 +72,4 @@
 
 </pre>-->
 
-<upload-demo></upload-demo>
+<!--<upload-demo></upload-demo>-->

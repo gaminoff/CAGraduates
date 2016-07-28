@@ -9,7 +9,7 @@ import {GradModel} from './grad.model';
   styleUrls: [`grad.css`],
   // selector: 'monster-list',
   template: `
-    <section *ngIf="grad" class="sec" >
+    <section *ngIf="grad" class=" sec" >
 
       <img [src]="grad.getImgUrlBefore()" onError="this.src='public/img/grad/generalBefore.jpg'">
     <div class="det">

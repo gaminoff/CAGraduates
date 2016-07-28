@@ -37,5 +37,16 @@ li {
 .imgGrad {
   max-width: 100px;
 }
+.widInp{
+
+  width:550px;
+}
+
+.regForm{
+  padding-top: 50px;
+  display:flex;
+  justify-content: center;
+  
+}
 
 
