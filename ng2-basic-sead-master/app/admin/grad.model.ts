@@ -15,7 +15,10 @@ export class GradModel {
   get id() {
     return this._id;
   }
-  getImgUrl() {
-    return `public/img/grad/${this.name}.png`;
+  getImgUrlAfter() {
+     return `public/img/grad/${this.name}/after.png`
+}
+  getImgUrlBefore() {
+  return `public/img/grad/${this.name}/before.png`
   }
 }
