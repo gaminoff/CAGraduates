@@ -589,6 +589,28 @@
     }
   }
 
+  // Grad Modal
+  grad-modal {
+    z-index: 9999 ;
+    .gradDetails {
+      position: fixed ;
+      width: 100vw ;
+      height: 100vh ;
+      top: 0 ;
+      left: 0;
+      background: rgba(0, 0, 0, 0.7);
+
+      .detailsCont {
+
+        // display: none ;
+        
+        width: 90% ;
+        height: 90% ;
+        background: white ;
+      }
+    }
+  }
+
   // Clients Aside
 
   aside.clients {
