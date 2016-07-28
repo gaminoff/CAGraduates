@@ -10,8 +10,8 @@ import {GradModel} from './grad.model';
   // selector: 'monster-list',
   template: `
     <section *ngIf="grad">
-      <img [src]="grad.getImgUrlAfter()" onError="this.src='public/img/grad/general.png'">
-      <img [src]="grad.getImgUrlBefore()" onError="this.src='public/img/grad/general.png'">
+      <img [src]="grad.getImgUrlAfter()" onError="this.src='public/img/grad/generalAfter.png'">
+      <img [src]="grad.getImgUrlBefore()" onError="this.src='public/img/grad/generalBefore.jpg'">
       <h2>Grad-{{grad.name}}</h2>
       <h2><a href="{{grad.email}}">email</a></h2>
       <h2><a href="{{grad.gitHub}}">gitHub</a></h2>
