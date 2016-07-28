@@ -2624,6 +2624,8 @@
       width: 100%;
       height: 250px; }
       .grads-component-container #team .gradsCont .team-member .flipSpace .imgsCont {
+        width: 100%;
+        margin: 0 auto;
         position: relative;
         transform-style: preserve-3d;
         transition: 300ms; }

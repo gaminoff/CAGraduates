@@ -22,10 +22,10 @@ export class GradService {
                         jsonGrad.course,
                         jsonGrad._id,
                         jsonGrad.email,
-                        jsonGrad.gitHub,
-                        jsonGrad.linked,
+                        jsonGrad.github,
+                        jsonGrad.linkedin,
                         jsonGrad.facebook,
-                        jsonGrad.galery,
+                        jsonGrad.gallery,
                         jsonGrad.details,
                         jsonGrad.moto
                         ))
@@ -49,10 +49,10 @@ export class GradService {
                         jsonGrad.course,
                         jsonGrad._id,
                         jsonGrad.email,
-                        jsonGrad.gitHub,
-                        jsonGrad.linked,
+                        jsonGrad.github,
+                        jsonGrad.linkedin,
                         jsonGrad.facebook,
-                        jsonGrad.galery,
+                        jsonGrad.gallery,
                         jsonGrad.details,
                         jsonGrad.moto
                         );
@@ -101,10 +101,10 @@ export class GradService {
                         jsonGrad.course,
                         jsonGrad._id,
                         jsonGrad.email,
-                        jsonGrad.gitHub,
-                        jsonGrad.linked,
+                        jsonGrad.github,
+                        jsonGrad.linkedin,
                         jsonGrad.facebook,
-                        jsonGrad.galery,
+                        jsonGrad.gallery,
                         jsonGrad.details,
                         jsonGrad.moto
                         );

@@ -4,10 +4,10 @@ export class GradModel {
               public course: string,
               private _id: string, 
               public email: string,
-              public gitHub:string,
-              public linked:string,
+              public github:string,
+              public linkedin:string,
               public facebook:string,
-              public galery:string,
+              public gallery:string,
               public details:string,
               public moto:string
               ) {}

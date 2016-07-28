@@ -14,10 +14,10 @@ import {GradModel} from './grad.model';
       <img [src]="grad.getImgUrlBefore()" onError="this.src='public/img/grad/generalBefore.jpg'">
     <div class="det">
       <h2>Links : <a href="{{grad.email}}">email</a>
-      <a href="{{grad.gitHub}}">gitHub</a>
-      <a href="{{grad.linked}}">linked</a>
+      <a href="{{grad.github}}">github</a>
+      <a href="{{grad.linkedin}}">linkedin</a>
       <a href="{{grad.facebook}}">facebook</a>
-      <a href="{{grad.galery}}">galery</a></h2>
+      <a href="{{grad.gallery}}">gallery</a></h2>
       <h2>Name : {{grad.name}}</h2>
       <h2>Course : {{grad.course}}</h2>
       <h2>Details : {{grad.details}}</h2>

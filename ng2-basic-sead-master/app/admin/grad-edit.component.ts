@@ -37,10 +37,10 @@ export class GradEditComponent implements OnInit {
                 (<FormControl>this.frmGrad.controls['name']).updateValue(grad.name);
                 (<FormControl>this.frmGrad.controls['course']).updateValue(grad.course);
                 (<FormControl>this.frmGrad.controls['email']).updateValue(grad.email);
-                (<FormControl>this.frmGrad.controls['gitHub']).updateValue(grad.gitHub);
-                (<FormControl>this.frmGrad.controls['linked']).updateValue(grad.linked);
+                (<FormControl>this.frmGrad.controls['github']).updateValue(grad.github);
+                (<FormControl>this.frmGrad.controls['linkedin']).updateValue(grad.linkedin);
                 (<FormControl>this.frmGrad.controls['facebook']).updateValue(grad.facebook);
-                (<FormControl>this.frmGrad.controls['galery']).updateValue(grad.galery);
+                (<FormControl>this.frmGrad.controls['gallery']).updateValue(grad.gallery);
                 (<FormControl>this.frmGrad.controls['details']).updateValue(grad.details);
                 (<FormControl>this.frmGrad.controls['moto']).updateValue(grad.moto);
             });
@@ -65,10 +65,10 @@ export class GradEditComponent implements OnInit {
                                   Validators.maxLength(100)])],
       course: ['', Validators.required],
       email:['',Validators.required],
-      gitHub:['',Validators.required],
-      linked:['',Validators.required],
+      github:['',Validators.required],
+      linkedin:['',Validators.required],
       facebook:['',Validators.required],
-      galery:['',Validators.required],
+      gallery:['',Validators.required],
       details:['',Validators.required],
       moto:['',Validators.required]
     });

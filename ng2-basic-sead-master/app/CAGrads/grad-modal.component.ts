@@ -34,7 +34,7 @@ export class GradModalComponent implements OnInit {
      }
 
     ngOnInit() { 
-
+      
     }
 
 }
