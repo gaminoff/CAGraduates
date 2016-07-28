@@ -18,7 +18,17 @@ export class GradService {
       .then(res => {
         const jsonGrads = res.json();
         return jsonGrads.map((jsonGrad : any) =>
-          new GradModel(jsonGrad.name, jsonGrad.course, jsonGrad._id))
+          new GradModel(jsonGrad.name,
+                        jsonGrad.course,
+                        jsonGrad._id,
+                        jsonGrad.email,
+                        jsonGrad.gitHub,
+                        jsonGrad.linked,
+                        jsonGrad.facebook,
+                        jsonGrad.galery,
+                        jsonGrad.details,
+                        jsonGrad.moto
+                        ))
       });
 
     prmGrads.catch(err => {
@@ -34,7 +44,18 @@ export class GradService {
       .toPromise()
       .then(res => {
         const jsonGrad = res.json();
-        return new GradModel(jsonGrad.name, jsonGrad.course, jsonGrad._id);
+        return new GradModel(
+                        jsonGrad.name,
+                        jsonGrad.course,
+                        jsonGrad._id,
+                        jsonGrad.email,
+                        jsonGrad.gitHub,
+                        jsonGrad.linked,
+                        jsonGrad.facebook,
+                        jsonGrad.galery,
+                        jsonGrad.details,
+                        jsonGrad.moto
+                        );
       });
 
     prmGrad.catch(err => {
@@ -75,7 +96,18 @@ export class GradService {
     prmGrad = response.toPromise()
       .then((res : any) => {
           const jsonGrad = res.json();
-          return new GradModel(jsonGrad.name, jsonGrad.course, jsonGrad.id);
+          return new GradModel(
+                        jsonGrad.name,
+                        jsonGrad.course,
+                        jsonGrad._id,
+                        jsonGrad.email,
+                        jsonGrad.gitHub,
+                        jsonGrad.linked,
+                        jsonGrad.facebook,
+                        jsonGrad.galery,
+                        jsonGrad.details,
+                        jsonGrad.moto
+          );
       });
 
     prmGrad.catch(err => {
