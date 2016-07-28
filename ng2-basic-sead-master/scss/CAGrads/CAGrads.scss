@@ -568,48 +568,106 @@
   }
 
   // Team Section
+  #team {
+    .gradsCont {
+      display: flex ;
+      // flex-wrap: wrap ;
+      justify-content: center ;
+      align-content: center ;
 
-  .team-member {
-    text-align: center;
-    margin-bottom: 50px;
 
-    img {
-      margin: 0 auto;
-      border: 7px solid white;
-    }
+      .team-member {
+        text-align: center;
+        margin-bottom: 50px;
 
-    h4 {
-      margin-top: 25px;
-      margin-bottom: 0;
-      text-transform: none;
-    }
+        .flipSpace {
+          perspective: 1000px ;
+          width: 100% ;
+          height: 250px ;
+          .imgsCont {
+            position: relative ;
+            transform-style: preserve-3d ;
+            transition: 300ms ;
+            .img {
+              position: absolute ;
+              backface-visibility: hidden ;
+              margin: 0 auto;
+              width: 100% ;
+              height: 100% ;
 
-    p {
-      margin-top: 0;
-    }
-  }
+              img {
+                border: 7px solid white;
+              }
+            }
+            .imgAfter {
+              transform: rotateY(180deg);
+            }
+          }
+          &:hover .imgsCont {
+            cursor: pointer ;
+            transform: rotateY(180deg);
+            pointer-events: none ;
+          }
+        }
 
-  // Grad Modal
-  grad-modal {
-    z-index: 9999 ;
-    .gradDetails {
-      position: fixed ;
-      width: 100vw ;
-      height: 100vh ;
-      top: 0 ;
-      left: 0;
-      background: rgba(0, 0, 0, 0.7);
+        h4 {
+          margin-top: 25px;
+          margin-bottom: 0;
+          text-transform: none;
+        }
 
-      .detailsCont {
-
-        // display: none ;
-        
-        width: 90% ;
-        height: 90% ;
-        background: white ;
+        p {
+          margin-top: 0;
+        }
       }
     }
   }
+
+    // Grad Modal
+    grad-modal {
+   
+      .gradDetails {
+        z-index: 9999 ;
+        position: fixed ;
+        width: 100vw ;
+        height: 100vh ;
+        top: 0 ;
+        left: 0;
+        background: rgba(200,200,200, 0.8);
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+
+        .detailsCont {
+          width: 90% ;
+          height: 90% ;
+          background: white ;
+          display: flex ;
+          flex-direction: column ;
+          justify-content: center ;
+          align-items: center ;
+
+          & > * {
+            margin: 10px ;
+            max-width: 50% ;
+            text-align: center ;
+          }
+
+          
+
+          .exitModal {
+            position: absolute ;
+            top: 0 ;
+            right: 0 ;
+            transform: translate(-100%, 50%);
+            width: 50px ;
+            font-size: 3em ;
+            border: none ;
+            background: transparent ;
+          }
+        }
+      }
+    }
 
   // Clients Aside
 
@@ -711,7 +769,9 @@
 
     li {
       a {
-        display: block;
+        display: flex;
+        justify-content: center ;
+        align-items: center ;
         background-color: $gray-darkest;
         height: 40px;
         width: 40px;
@@ -728,6 +788,7 @@
         &:focus,
         &:hover {
           background-color: $brand-primary;
+          text-decoration: none;
         }
       }
     }

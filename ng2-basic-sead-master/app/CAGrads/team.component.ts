@@ -21,29 +21,30 @@ import {GradModalComponent} from './grad-modal.component';
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row gradsCont">
                     <div class="col-sm-4" *ngFor="let grad of grads">
                         <div class="team-member">
-                        
-                            <img class="img-responsive img-circle" (click)="openGradModal(grad)" 
-                                src="public/img/home/team/{{grad.name}}-before.jpg" alt="">
+
+                            <div class="flipSpace" (click)="openGradModal(grad)">
+                                <div class="imgsCont">
+                                    <div class="imgAfter img">
+                                        <img class="img-responsive img-circle" src="public/img/home/team/after.jpg" alt="">                                
+                                    </div>
+                                    <div class="imgBefore img">
+                                        <img class="img-responsive img-circle" src="public/img/home/team/{{grad.name}}-before.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
                             <h4>{{grad.name}}</h4>
-                            <p class="text-muted">My moto{{grad.moto}}</p>
-                            <!--<social-btns></social-btns>-->
+                            <p class="text-muted">{{grad.moto}}</p>
                         </div>
                     </div>     
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <grad-modal [grad]="selectedGrad"></grad-modal>
+        <grad-modal [grad]="selectedGrad" (close)="selectedGrad = null"></grad-modal>
     `
 })
 export class TeamComponent implements OnInit {
