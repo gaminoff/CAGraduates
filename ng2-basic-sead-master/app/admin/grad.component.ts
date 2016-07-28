@@ -9,17 +9,23 @@ import {GradModel} from './grad.model';
   styleUrls: [`grad.css`],
   // selector: 'monster-list',
   template: `
-    <section *ngIf="grad">
-      <img [src]="grad.getImgUrl()" >
-      <h2>Grad {{grad.name}}</h2>
-      <h2>email{{grad.email}}</h2>
-      <h2>gitHub{{grad.gitHub}}</h2>
-      <h2>linked{{grad.linked}}</h2>
-      <h2>facebook{{grad.facebook}}</h2>
-      <h2>galery{{grad.galery}}</h2>
-      <h2>details{{grad.details}}</h2>
-      <h2>moto{{grad.moto}}</h2>
+    <section *ngIf="grad" class=" sec" >
+
+      <img [src]="grad.getImgUrlBefore()" onError="this.src='public/img/grad/generalBefore.jpg'">
+    <div class="det">
+      <h2>Links : <a href="{{grad.email}}">email</a>
+      <a href="{{grad.gitHub}}">gitHub</a>
+      <a href="{{grad.linked}}">linked</a>
+      <a href="{{grad.facebook}}">facebook</a>
+      <a href="{{grad.galery}}">galery</a></h2>
+      <h2>Name : {{grad.name}}</h2>
+      <h2>Course : {{grad.course}}</h2>
+      <h2>Details : {{grad.details}}</h2>
+      <h2>Moto : {{grad.moto}}</h2>
+
+      </div>
       
+      <img [src]="grad.getImgUrlAfter()" onError="this.src='public/img/grad/generalAfter.png'">
     </section>
   `
 })

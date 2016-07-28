@@ -1,8 +1,8 @@
 import { PLATFORM_DIRECTIVES } from '@angular/core';
 import {AppComponent} from './app.component';
-import {MonsterListComponent} from './monster/monster-list.component';
-import {MonsterComponent} from './monster/monster.component';
-import {MonsterEditComponent} from './monster/monster-edit.component';
+// import {MonsterListComponent} from './monster/monster-list.component';
+// import {MonsterComponent} from './monster/monster.component';
+// import {MonsterEditComponent} from './monster/monster-edit.component';
 import {HomeComponent} from './CAGrads/home.component';
 // import {AdminComponent} from './admin/admin.component';
 import {GradListComponent} from './admin/grad-list.component';
@@ -13,10 +13,10 @@ import { RouterConfig, ROUTER_DIRECTIVES, provideRouter } from '@angular/router'
 
 const routes: RouterConfig = [
   { path: '', component: AppComponent },
-  { path: 'monster', component: MonsterListComponent },
-  { path: 'monster/edit', component: MonsterEditComponent },
-  { path: 'monster/edit/:id', component: MonsterEditComponent },
-  { path: 'monster/:id/:name', component: MonsterComponent },
+  // { path: 'monster', component: MonsterListComponent },
+  // { path: 'monster/edit', component: MonsterEditComponent },
+  // { path: 'monster/edit/:id', component: MonsterEditComponent },
+  // { path: 'monster/:id/:name', component: MonsterComponent },
   { path: 'CAGrads', component: HomeComponent },
   { path: 'chat', component: ChatRoomComponent },
   // { path: 'admin', component: AdminComponent },

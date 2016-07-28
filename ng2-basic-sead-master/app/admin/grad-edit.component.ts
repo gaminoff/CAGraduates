@@ -7,6 +7,7 @@ import {UploadDemoComponent} from '../shared/upload-demo/upload-demo.component'
 
 @Component({
   moduleId: module.id,
+  styleUrls: [`grad.css`],
   // selector: 'monster-edit',
   templateUrl: 'grad-edit.component.html',
   directives: [REACTIVE_FORM_DIRECTIVES, UploadDemoComponent]

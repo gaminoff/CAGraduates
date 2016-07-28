@@ -107,7 +107,7 @@ export class GradService {
                         jsonGrad.galery,
                         jsonGrad.details,
                         jsonGrad.moto
-          );
+                        );
       });
 
     prmGrad.catch(err => {
