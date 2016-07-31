@@ -2304,7 +2304,10 @@
   border-color: transparent; }
   .grads-component-container .navbar-default .navbar-brand {
     color: #fed136;
-    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive; }
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+    padding: 5px; }
+    .grads-component-container .navbar-default .navbar-brand img {
+      height: 100%; }
     .grads-component-container .navbar-default .navbar-brand.active, .grads-component-container .navbar-default .navbar-brand:active, .grads-component-container .navbar-default .navbar-brand:focus, .grads-component-container .navbar-default .navbar-brand:hover {
       color: #fec503; }
   .grads-component-container .navbar-default .navbar-collapse {
@@ -2336,8 +2339,7 @@
 
 @media (min-width: 768px) {
   .grads-component-container .navbar-default {
-    background-color: transparent;
-    padding: 25px 0;
+    background-color: rgba(0, 0, 0, 0.5);
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
