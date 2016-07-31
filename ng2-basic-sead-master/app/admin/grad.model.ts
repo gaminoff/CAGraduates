@@ -17,6 +17,7 @@ export class GradModel {
     return this._id;
   }
   getImgUrlAfter() {
+    console.log('getting img url: ', this.imgUrl)
      return this.imgUrl;
 }
   getImgUrlBefore() {

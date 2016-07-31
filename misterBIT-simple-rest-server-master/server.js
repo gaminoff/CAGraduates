@@ -12,6 +12,7 @@ const 	express = require('express'),
 const clientSessions = require("client-sessions");
 const multer  = require('multer')
 
+
 // Configure where uploaded files are going
 const uploadFolder = '/uploads';
 var storage = multer.diskStorage({
@@ -32,6 +33,7 @@ var corsOptions = {
   credentials: true
 };
 
+app.use(express.static('uploads'));
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
@@ -141,7 +143,7 @@ app.post('/data/:objType', upload.single('file'), function (req, res) {
     delete obj._id;
     // If there is a file upload, add the url to the obj
     if (req.file) {
-        obj.imgUrl = uploadFolder + '/' + req.file.filename;
+        obj.imgUrl = "http://localhost:3003/" + req.file.filename;
     }
 
 	dbConnect().then((db) => {
