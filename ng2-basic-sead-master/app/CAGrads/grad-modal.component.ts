@@ -44,12 +44,11 @@ export class GradModalComponent implements OnChanges {
 
     closeModal() {
         this.close.emit(true);
-    }
-
-    ngAfterViewInit() {
-            // console.log('modal open', this.modal);   
         this.isOpen = false ;
-
     }
+
+    // ngAfterViewInit() {
+    //         console.log('modal open', this.grad);   
+    // }
 
 }

@@ -4,7 +4,7 @@ import {AppComponent} from './app.component';
 // import {MonsterComponent} from './monster/monster.component';
 // import {MonsterEditComponent} from './monster/monster-edit.component';
 import {HomeComponent} from './CAGrads/home.component';
-// import {AdminComponent} from './admin/admin.component';
+import {AdminComponent} from './admin/admin.component';
 import {GradListComponent} from './admin/grad-list.component';
 import {GradComponent} from './admin/grad.component';
 import {GradEditComponent} from './admin/grad-edit.component';

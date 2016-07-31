@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ViewChild } from '@angular/core';
 import { SocialBtnsComponent } from './social-btns.component';
 import {GradService} from '../admin/grad.service';
 import {GradModel} from '../admin/grad.model';
@@ -47,11 +47,11 @@ import {GradModalComponent} from './grad-modal.component';
         <grad-modal [grad]="selectedGrad" (close)="selectedGrad = null"></grad-modal>
     `
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent implements OnInit { //, AfterViewChecked {
 
     private grads : GradModel[] ;
     private selectedGrad : GradModel ;
-
+    // @ViewChild(GradModalComponent) gradModal : GradModalComponent ;
     constructor(private gradService : GradService) { }
 
     ngOnInit() {
@@ -59,7 +59,7 @@ export class TeamComponent implements OnInit {
 
         prmGrads.then((grads : GradModel[]) => {
             this.grads = grads;
-            console.log('this.grads: ', this.grads)
+            console.log('this.grads: ', this.grads);
         });
 
         prmGrads.catch(err => {
@@ -68,6 +68,12 @@ export class TeamComponent implements OnInit {
         });
 
     }
+
+    // ngAfterViewChecked() {
+    //     console.log('checking modal component');
+        
+    //     if ( !this.gradModal.isOpen ) this.gradModal.isOpen = true ;
+    // }
 
     openGradModal(grad) {
         this.selectedGrad = grad ;
