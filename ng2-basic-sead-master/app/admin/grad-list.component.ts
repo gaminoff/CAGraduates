@@ -37,7 +37,8 @@ import {GradThumbComponent} from './grad-thumb.component';
 })
 export class GradListComponent implements OnInit {
   // TODO: let the pipe setup the initial filter
-  private filter = {byName: '', byCourse: ''};
+  // private filter = {byName: '', byCourse: ''};
+  private filter;
   private grads : GradModel[] = [];
 
   constructor(private toastr : ToastsManager, private gradService : GradService) { }

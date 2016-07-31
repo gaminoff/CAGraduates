@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {
     router.events.filter(event => event instanceof NavigationStart)
         .subscribe( event => {
-            console.log('event: ', event.url);
+            // console.log('event: ', event.url);
             if ((event.url).includes('/admin')) this.inAdminPage = true ;
             else if (event.url === '/') this.router.navigate(['/CAGrads']);
             else this.inAdminPage = false ;

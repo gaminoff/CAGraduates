@@ -9,16 +9,17 @@ export class GradModel {
               public facebook:string,
               public gallery:string,
               public details:string,
-              public moto:string
+              public moto:string,
+              private imgUrl:string
               ) {}
 
   get id() {
     return this._id;
   }
   getImgUrlAfter() {
-     return `public/img/grad/${this.name}/after.png`
+     return this.imgUrl;
 }
   getImgUrlBefore() {
-  return `public/img/grad/${this.name}/before.png`
+  return this.imgUrl;
   }
 }

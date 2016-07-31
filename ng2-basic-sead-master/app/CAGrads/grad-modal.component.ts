@@ -37,7 +37,6 @@ export class GradModalComponent implements OnChanges {
 
     ngOnChanges(changes : SimpleChanges) {
         if (changes['grad'].currentValue) {
-            console.log('nodal opened');
             this.isOpen = true ;
         }     
     }

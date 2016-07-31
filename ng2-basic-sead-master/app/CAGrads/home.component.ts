@@ -29,8 +29,6 @@ export class HomeComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        console.log('yoo');
-
     // // jQuery for page scrolling feature - requires jQuery Easing plugin
     // $('a.page-scroll').bind('click', function(event) {
     //     var $anchor = $(this);

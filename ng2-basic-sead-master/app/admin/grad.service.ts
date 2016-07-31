@@ -8,7 +8,12 @@ import {GradModel} from './grad.model';
 export class GradService {
 
   private baseUrl = 'http://localhost:3003/data/grad/';
+
   constructor(private http: Http) {}
+
+  public get url() {
+      return this.baseUrl;
+  }
 
   // query (GETs a list)
   query(): Promise<GradModel[]> {
@@ -27,7 +32,8 @@ export class GradService {
                         jsonGrad.facebook,
                         jsonGrad.gallery,
                         jsonGrad.details,
-                        jsonGrad.moto
+                        jsonGrad.moto,
+                        jsonGrad.imgUrl
                         ))
       });
 
@@ -54,7 +60,8 @@ export class GradService {
                         jsonGrad.facebook,
                         jsonGrad.gallery,
                         jsonGrad.details,
-                        jsonGrad.moto
+                        jsonGrad.moto,
+                        jsonGrad.imgUrl
                         );
       });
 
@@ -106,7 +113,8 @@ export class GradService {
                         jsonGrad.facebook,
                         jsonGrad.gallery,
                         jsonGrad.details,
-                        jsonGrad.moto
+                        jsonGrad.moto,
+                        jsonGrad.imgUrl
                         );
       });
 
