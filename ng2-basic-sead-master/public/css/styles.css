@@ -2339,7 +2339,7 @@
 
 @media (min-width: 768px) {
   .grads-component-container .navbar-default {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
