@@ -571,18 +571,18 @@
   #team {
     .gradsCont {
       display: flex ;
-      flex-wrap: wrap ;
+      // flex-wrap: wrap ;
       justify-content: center ;
       align-content: center ;
 
 
       .team-member {
         text-align: center;
-        // margin-bottom: 50px;
-        margin: 0px 20px 50px ;
+        margin-bottom: 50px;
+
         .flipSpace {
           perspective: 1000px ;
-          width: 250px ;
+          width: 100% ;
           height: 250px ;
           // height: 100% ;
           .imgsCont {
@@ -600,11 +600,9 @@
               height: 100% ;
               img {
                 border: 7px solid white;
-                height: 100% ;
-                // padding-bottom: 100% ;
-                // max-height: 100% ;
+                max-width: 100% ;
+                max-height: 100% ;
                 margin: auto ;
-                object-fit: cover ;
               }
             }
             .imgAfter {
@@ -641,30 +639,19 @@
         height: 100vh ;
         top: 0 ;
         left: 0;
-        background: rgba($color: $brand-primary, $alpha: 0.85);
+        background: rgba(200,200,200, 0.8);
         display: flex ;
         justify-content: center ;
         align-items: center ;
-        pointer-events: none ;
-        opacity: 0 ;
-        transition: all 0.5s ease-in-out ;
-
-        &.opened {
-          opacity: 1 ;
-          pointer-events: auto ;
-        }
-        
 
         .detailsCont {
-          position: relative ;
-          width: 80% ;
-          height: 80% ;
+          width: 90% ;
+          height: 90% ;
           background: white ;
           display: flex ;
           flex-direction: column ;
           justify-content: center ;
           align-items: center ;
-          box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.5);
 
           & > * {
             margin: 10px ;
@@ -676,22 +663,13 @@
 
           .exitModal {
             position: absolute ;
-            width: 30px ;
-            height: 30px ;
-            font-size: 30px ;
-            text-align: center ;
-            line-height: 30px ;
-            top: -45px ;
-            right: -45px ;
-            font-weight: bold ;
+            top: 0 ;
+            right: 0 ;
+            transform: translate(-100%, 50%);
+            width: 50px ;
+            font-size: 3em ;
             border: none ;
             background: transparent ;
-            color: white ;
-            text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
-            transition: all 0.15s cubic-bezier(0.63, 1.24, 0.9, 2.57);
-            &:hover {
-              transform: scale(1.2) ;
-            }
           }
         }
       }

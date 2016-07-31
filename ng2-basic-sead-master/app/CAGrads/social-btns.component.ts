@@ -7,7 +7,7 @@ import { GradModel } from '../admin/grad.model';
     inputs: ['grad'],
     template: `
         <ul *ngIf="grad" class="list-inline social-buttons">
-            <li *ngIf="grad.github"><a href="{{grad.gitHub}}"><i class="fa fa-github"></i></a>
+            <li *ngIf="grad.github"><a href="{{grad.github}}"><i class="fa fa-github"></i></a>
             </li>
             <li *ngIf="grad.facebook"><a href="{{grad.facebook}}"><i class="fa fa-facebook"></i></a>
             </li>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewInit, SimpleChanges, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { GradModel } from '../admin/grad.model';
 import { SocialBtnsComponent } from './social-btns.component';
 
@@ -8,33 +8,48 @@ import { SocialBtnsComponent } from './social-btns.component';
     selector: 'grad-modal',
     directives: [SocialBtnsComponent],
     template: `
-        <div *ngIf="grad" class="gradDetails">
-            <div class="detailsCont">
-
-                <button class="exitModal" (click)="close.emit(true)" >X</button>
-                <h2>{{grad.name}}</h2>  
-                <p class="text-muted">Moto: "{{grad.moto}}"</p>
-                <img class="img-responsive" 
-                                src="public/img/home/team/{{grad.name}}-before.jpg" alt="">
-                <p class="">{{grad.details}}
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere officia tenetur aut in fugiat? Officia optio iure sapiente at molestiae doloribus maiores saepe odio asperiores, ut nesciunt similique quasi eligendi.
-                </p>
-                <em *ngIf="grad.email" class="text-muted">{{grad.email}}</em>
-                <social-btns [grad]="grad"></social-btns>
+        <div *ngIf="grad" class="modalCont">
+            <div [ngClass]="{opened: isOpen}" class="gradDetails">
+                <div class="detailsCont">
+                    <button class="exitModal" (click)="closeModal()" >X</button>
+                    <h2>{{grad.name}}</h2>  
+                    <em class="text-muted">"{{grad.moto}}"</em>
+                    <img class="img-responsive" 
+                                    src="public/img/home/team/{{grad.name}}-before.jpg" alt="">
+                    <p class="">{{grad.details}}
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere officia tenetur aut in fugiat? Officia optio iure sapiente at molestiae doloribus maiores saepe odio asperiores, ut nesciunt similique quasi eligendi.
+                    </p>
+                    <em *ngIf="grad.email" class="text-muted">{{grad.email}}</em>
+                    <social-btns [grad]="grad"></social-btns>
+                </div>
             </div>
         </div>
     `
 })
-export class GradModalComponent implements OnInit {
+export class GradModalComponent implements OnChanges {
 
     @Input() grad : GradModel ;
     @Output() close  = new EventEmitter() ;
+    private isOpen : boolean = false ;
 
     constructor(private el : ElementRef) {
      }
 
-    ngOnInit() { 
-      
+    ngOnChanges(changes : SimpleChanges) {
+        if (changes['grad'].currentValue) {
+            console.log('nodal opened');
+            this.isOpen = true ;
+        }     
+    }
+
+    closeModal() {
+        this.close.emit(true);
+    }
+
+    ngAfterViewInit() {
+            // console.log('modal open', this.modal);   
+        this.isOpen = false ;
+
     }
 
 }

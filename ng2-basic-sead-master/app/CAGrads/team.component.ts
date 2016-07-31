@@ -22,7 +22,7 @@ import {GradModalComponent} from './grad-modal.component';
                 </div>
 
                 <div class="row gradsCont">
-                    <div class="col-sm-4" *ngFor="let grad of grads">
+                    <div *ngFor="let grad of grads">
                         <div class="team-member">
 
                             <div class="flipSpace" (click)="openGradModal(grad)">
