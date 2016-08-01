@@ -2876,3 +2876,35 @@
 
 .grads-component-container body {
   -webkit-tap-highlight-color: #fed136; }
+
+/*$bgColor : lightblue;*/
+.admin.comp {
+  width: 100vw;
+  display: flex;
+  padding-top: 70px;
+  justify-content: space-around; }
+  .admin.comp img {
+    width: 350px;
+    height: 350px; }
+
+.admin.thumb .imgGrad {
+  max-width: 100px; }
+
+.admin.list li {
+  list-style: none;
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
+  /*border: 1px solid gray;*/
+  background-color: #e6eef1;
+  border-radius: 0.2em;
+  text-align: center;
+  font-size: 2em;
+  color: darkblue; }
+
+.admin.regForm {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center; }
+  .admin.regForm .widInp {
+    width: 550px; }

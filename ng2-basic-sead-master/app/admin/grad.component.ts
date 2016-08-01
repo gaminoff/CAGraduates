@@ -6,10 +6,10 @@ import {GradModel} from './grad.model';
 
 @Component({
   moduleId: module.id,
-  styleUrls: [`grad.css`],
+  styleUrls: [`../../public/css/styles.css`],
   // selector: 'monster-list',
   template: `
-    <section *ngIf="grad" class=" sec" >
+    <section *ngIf="grad" class="admin comp" >
 
       <img [src]="grad.getImgUrlBefore()" onError="this.src='public/img/grad/generalBefore.jpg'">
     <div class="det">

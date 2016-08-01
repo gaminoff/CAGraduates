@@ -10,12 +10,12 @@ import {GradThumbComponent} from './grad-thumb.component';
 
 @Component({
   moduleId: module.id,
-  styleUrls: [`grad.css`],
+  styleUrls: [`../../public/css/styles.css`],
   pipes: [FilterByPipe],
   directives: [GradFilterComponent, GradThumbComponent],
   // selector: 'monster-list',
   template: `
-    <section>
+    <section class="admin list">
       <h2>Grads </h2>
 
       <grad-filter (filterChange)="filter = $event"></grad-filter>
