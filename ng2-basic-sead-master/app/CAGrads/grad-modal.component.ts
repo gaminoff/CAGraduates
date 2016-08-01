@@ -15,7 +15,7 @@ import { SocialBtnsComponent } from './social-btns.component';
                     <h2>{{grad.name}}</h2>  
                     <em class="text-muted">"{{grad.moto}}"</em>
                     <img class="img-responsive" 
-                                    [src]="grad.getImgUrlAfter()" alt="">
+                                    [src]="grad.imgAfterUrl? grad.imgAfterUrl:'../public/img/grad/no-profile.jpg'" alt="">
                     <p class="">{{grad.details}}
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere officia tenetur aut in fugiat? Officia optio iure sapiente at molestiae doloribus maiores saepe odio asperiores, ut nesciunt similique quasi eligendi.
                     </p>

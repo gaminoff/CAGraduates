@@ -28,10 +28,10 @@ import {GradModalComponent} from './grad-modal.component';
                             <div class="flipSpace" (click)="openGradModal(grad)">
                                 <div class="imgsCont">
                                     <div class="imgAfter img">
-                                        <img class="img-responsive img-circle" [src]="grad.imgBeforeUrl" alt="">                                
+                                        <img class="img-responsive img-circle" [src]="grad.imgAfterUrl? grad.imgAfterUrl:'../public/img/grad/no-profile.jpg'" alt="">                                
                                     </div>
                                     <div class="imgBefore img">
-                                        <img class="img-responsive img-circle" [src]="grad.imgAfterUrl" alt="">
+                                        <img class="img-responsive img-circle" [src]="grad.imgBeforeUrl? grad.imgBeforeUrl:'../public/img/grad/no-profile.jpg'" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -68,12 +68,6 @@ export class TeamComponent implements OnInit { //, AfterViewChecked {
         });
 
     }
-
-    // ngAfterViewChecked() {
-    //     console.log('checking modal component');
-        
-    //     if ( !this.gradModal.isOpen ) this.gradModal.isOpen = true ;
-    // }
 
     openGradModal(grad) {
         this.selectedGrad = grad ;

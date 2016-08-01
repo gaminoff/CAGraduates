@@ -2366,6 +2366,7 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  height: 100vh;
   text-align: center;
   color: white; }
   .grads-component-container header .intro-text {
