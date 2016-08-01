@@ -93,7 +93,8 @@ export class GradService {
 
     let response : any;
     let prmGrad : Promise<GradModel>;
-
+    console.log('gradData in gradService: ', gradData);
+    console.log('gradData ID in gradService: ', id);
     if (id) {
       const url = this.baseUrl + id;
       response = this.http.put(url, gradData)

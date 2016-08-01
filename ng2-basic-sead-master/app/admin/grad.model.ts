@@ -10,8 +10,8 @@ export class GradModel {
               public gallery:string,
               public details:string,
               public moto:string,
-              private imgBeforeUrl:string,
-              private imgAfterUrl:string
+              public imgBeforeUrl:string,
+              public imgAfterUrl:string
               ) {}
 
   get id() {

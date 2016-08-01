@@ -23,15 +23,15 @@ import {GradModalComponent} from './grad-modal.component';
 
                 <div class="row gradsCont">
                     <div *ngFor="let grad of grads">
-                        <div class="team-member">
+                        <div *ngIf="grad.name" class="team-member">
 
                             <div class="flipSpace" (click)="openGradModal(grad)">
                                 <div class="imgsCont">
                                     <div class="imgAfter img">
-                                        <img class="img-responsive img-circle" src="public/img/home/team/after.jpg" alt="">                                
+                                        <img class="img-responsive img-circle" [src]="grad.imgBeforeUrl" alt="">                                
                                     </div>
                                     <div class="imgBefore img">
-                                        <img class="img-responsive img-circle" [src]="grad.getImgUrlAfter()" alt="">
+                                        <img class="img-responsive img-circle" [src]="grad.imgAfterUrl" alt="">
                                     </div>
                                 </div>
                             </div>

@@ -149,7 +149,7 @@ app.post('/data/:objType', upload.single('file'), function (req, res) {
     delete obj._id;
     // If there is a file upload, add the url to the obj
     if (req.file) {
-        obj.imgBeforeUrl = "http://localhost:3003/" + req.file.filename;
+        obj.imgUrl = "http://localhost:3003/" + req.file.filename;
 		// obj.imgAfterUrl = "http://localhost:3003/" + req.files[1];
 
     }
