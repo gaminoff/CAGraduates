@@ -24,6 +24,9 @@ export class GradEditComponent implements OnInit {
     private router: Router,
     private gradService: GradService) {
       this.uploader = new FileUploader({url: gradService.url});
+      this.uploader.onCompleteAll = () => {
+          this.router.navigate(['/admin']);
+      };
   }
 
   ngOnInit() {
@@ -58,6 +61,7 @@ export class GradEditComponent implements OnInit {
     //       this.router.navigate(['/admin']);
     //   });
          // if there is a file to upload, use the uploader to update both file and form data
+         console.log('this.uploader', this.uploader);
       if (this.uploader.getNotUploadedItems().length) {
           this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
               form.append('name', this.frmGrad.value.name);
@@ -70,10 +74,9 @@ export class GradEditComponent implements OnInit {
               form.append('details', this.frmGrad.value.details);
               form.append('moto', this.frmGrad.value.moto);
          };
+           console.log('this.uploader after', this.uploader);
           //   console.log('Uploading Both Data and Files...');
-          this.uploader.uploadAll();
-          this.router.navigate(['/admin']);
-           
+          this.uploader.uploadAll();   
       } else {
           // if file upload support is not needed, go regular:
           const gradId = (this.gradToEdit) ? this.gradToEdit.id : undefined;

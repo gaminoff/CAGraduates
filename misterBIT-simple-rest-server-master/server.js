@@ -133,8 +133,9 @@ app.delete('/data/:objType/:id', function (req, res) {
 
 // POST - adds 
 app.post('/data/:objType', upload.single('file'), function (req, res) {
-    console.log('req.file', req.file);
-    console.log('req.body', req.body);
+    console.log('req.file---->', req.file);
+    console.log('req.body---->', req.body);
+    console.log('upload------>', upload);
    
 	const objType = req.params.objType;
     cl("POST for " + objType);
