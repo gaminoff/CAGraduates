@@ -2890,6 +2890,12 @@
 .admin.thumb .imgGrad {
   max-width: 100px; }
 
+.admin.filter {
+  background-color: #DDD;
+  margin: 2em 0;
+  padding: 0.4em 1em 1em;
+  border-radius: 0.4em; }
+
 .admin.list li {
   list-style: none;
   display: inline-block;
