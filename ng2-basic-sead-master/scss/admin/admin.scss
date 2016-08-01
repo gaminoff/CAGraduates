@@ -25,6 +25,9 @@
 
   }
   &.list{
+    .grad{
+      display:flex;
+      flex-wrap:wrap;
       .gradCont {
         list-style: none;
         display:inline-block;
@@ -35,8 +38,10 @@
         border-radius: 0.2em;
         text-align: center;
         font-size: 2em;
+        // color:darkred;
         color:darkblue;
       }
+    }
   } 
   &.regForm{
     padding-top: 50px;
