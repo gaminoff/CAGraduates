@@ -2896,17 +2896,20 @@
   padding: 0.4em 1em 1em;
   border-radius: 0.4em; }
 
-.admin.list .gradCont {
-  list-style: none;
-  display: inline-block;
-  padding: 1em;
-  margin: 1em;
-  /*border: 1px solid gray;*/
-  background-color: #e6eef1;
-  border-radius: 0.2em;
-  text-align: center;
-  font-size: 2em;
-  color: darkblue; }
+.admin.list .grad {
+  display: flex;
+  flex-wrap: wrap; }
+  .admin.list .grad .gradCont {
+    list-style: none;
+    display: inline-block;
+    padding: 1em;
+    margin: 1em;
+    /*border: 1px solid gray;*/
+    background-color: #e6eef1;
+    border-radius: 0.2em;
+    text-align: center;
+    font-size: 2em;
+    color: darkblue; }
 
 .admin.regForm {
   padding-top: 50px;
