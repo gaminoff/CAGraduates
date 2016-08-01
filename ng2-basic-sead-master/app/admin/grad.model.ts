@@ -10,7 +10,8 @@ export class GradModel {
               public gallery:string,
               public details:string,
               public moto:string,
-              private imgUrl:string
+              private imgBeforeUrl:string,
+              private imgAfterUrl:string
               ) {}
 
   get id() {
@@ -18,9 +19,9 @@ export class GradModel {
   }
   getImgUrlAfter() {
     // console.log('getting img url: ', this.imgUrl);
-     return this.imgUrl;
+     return this.imgAfterUrl;
 }
   getImgUrlBefore() {
-  return this.imgUrl;
+  return this.imgBeforeUrl;
   }
 }

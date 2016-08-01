@@ -33,8 +33,9 @@ export class GradService {
                         jsonGrad.gallery,
                         jsonGrad.details,
                         jsonGrad.moto,
-                        jsonGrad.imgUrl
-                        ))
+                        jsonGrad.imgBeforeUrl,
+	                      jsonGrad.imgAfterUrl
+        ))
       });
 
     prmGrads.catch(err => {
@@ -61,7 +62,8 @@ export class GradService {
                         jsonGrad.gallery,
                         jsonGrad.details,
                         jsonGrad.moto,
-                        jsonGrad.imgUrl
+                        jsonGrad.imgBeforeUrl,
+	                      jsonGrad.imgAfterUrl
                         );
       });
 
@@ -114,7 +116,8 @@ export class GradService {
                         jsonGrad.gallery,
                         jsonGrad.details,
                         jsonGrad.moto,
-                        jsonGrad.imgUrl
+                        jsonGrad.imgBeforeUrl,
+	                      jsonGrad.imgAfterUrl
                         );
       });
 

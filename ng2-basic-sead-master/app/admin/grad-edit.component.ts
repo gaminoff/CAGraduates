@@ -24,6 +24,9 @@ export class GradEditComponent implements OnInit {
     private router: Router,
     private gradService: GradService) {
       this.uploader = new FileUploader({url: gradService.url});
+      this.uploader.onCompleteItem = (item, response) => {
+          console.log('uploaded file!', item, response);
+      };
       this.uploader.onCompleteAll = () => {
           this.router.navigate(['/admin']);
       };
@@ -55,46 +58,29 @@ export class GradEditComponent implements OnInit {
       });
   }
   save() {
-    // const gradId = (this.gradToEdit)?  this.gradToEdit.id : undefined;
-    // this.gradService.save(this.frmGrad.value, gradId)
-    //   .then(()=>{
-    //       this.router.navigate(['/admin']);
-    //   });
-         // if there is a file to upload, use the uploader to update both file and form data
-         console.log('this.uploader', this.uploader);
-      if (this.uploader.getNotUploadedItems().length) {
-          this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-              form.append('name', this.frmGrad.value.name);
-              form.append('course', this.frmGrad.value.course);
-              form.append('email', this.frmGrad.value.email);
-              form.append('github', this.frmGrad.value.github);
-              form.append('linkedin', this.frmGrad.value.linkedin);
-              form.append('facebook', this.frmGrad.value.facebook);
-              form.append('gallery', this.frmGrad.value.gallery);
-              form.append('details', this.frmGrad.value.details);
-              form.append('moto', this.frmGrad.value.moto);
-         };
-           console.log('this.uploader after', this.uploader);
-          //   console.log('Uploading Both Data and Files...');
-          this.uploader.uploadAll();   
-      } else {
-          // if file upload support is not needed, go regular:
-          const gradId = (this.gradToEdit) ? this.gradToEdit.id : undefined;
-          this.gradService.save(this.frmGrad.value, gradId)
-              .then(() => {
-                  this.router.navigate(['/admin']);
-              });
-      }
+    const gradId = (this.gradToEdit)?  this.gradToEdit.id : undefined;
+    this.gradService.save(this.frmGrad.value, gradId)
+      .then((grad: GradModel)=>{
 
+          const newGradId = grad.id ;
+          console.log('grad from save: ', newGradId);
+
+          if (this.uploader.getNotUploadedItems().length) {
+              this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+                form.append('newGradId', newGradId);
+                console.log('this.uploader', this.uploader);
+              };
+              this.uploader.uploadAll(); 
+          }   
+      });    
   }
+
 
   prepareForm() {
      this.frmGrad = this.formBuilder.group({
-      name: ['',
-              Validators.compose([Validators.required,
-      
-                                  Validators.minLength(3),
-                                  Validators.maxLength(100)])],
+      name: ['', Validators.compose([Validators.required,
+                                     Validators.minLength(3),
+                                     Validators.maxLength(100)])],
       course: ['', Validators.required],
       email:['',Validators.required],
       github:['',Validators.required],
@@ -106,3 +92,24 @@ export class GradEditComponent implements OnInit {
     });
   }
 }
+
+
+
+
+                  // form.append('name', this.frmGrad.value.name);
+                  // form.append('course', this.frmGrad.value.course);
+                  // form.append('email', this.frmGrad.value.email);
+                  // form.append('github', this.frmGrad.value.github);
+                  // form.append('linkedin', this.frmGrad.value.linkedin);
+                  // form.append('facebook', this.frmGrad.value.facebook);
+                  // form.append('gallery', this.frmGrad.value.gallery);
+                  // form.append('details', this.frmGrad.value.details);
+                  // form.append('moto', this.frmGrad.value.moto);
+      // } else {
+      //     // if file upload support is not needed, go regular:
+      //     const gradId = (this.gradToEdit) ? this.gradToEdit.id : undefined;
+      //     this.gradService.save(this.frmGrad.value, gradId)
+      //         .then(() => {
+      //             this.router.navigate(['/admin']);
+      //         });
+      // }

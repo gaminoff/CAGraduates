@@ -132,10 +132,15 @@ app.delete('/data/:objType/:id', function (req, res) {
 });
 
 // POST - adds 
+
+// app.post('/data/:objType', upload.array('file', 2), function (req, res) {
+
+
 app.post('/data/:objType', upload.single('file'), function (req, res) {
     console.log('req.file---->', req.file);
     console.log('req.body---->', req.body);
     console.log('upload------>', upload);
+	console.log("Array:::", req.files);
    
 	const objType = req.params.objType;
     cl("POST for " + objType);
@@ -144,7 +149,9 @@ app.post('/data/:objType', upload.single('file'), function (req, res) {
     delete obj._id;
     // If there is a file upload, add the url to the obj
     if (req.file) {
-        obj.imgUrl = "http://localhost:3003/" + req.file.filename;
+        obj.imgBeforeUrl = "http://localhost:3003/" + req.file.filename;
+		// obj.imgAfterUrl = "http://localhost:3003/" + req.files[1];
+
     }
 
 	dbConnect().then((db) => {
