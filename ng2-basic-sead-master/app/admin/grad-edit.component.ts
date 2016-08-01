@@ -8,7 +8,7 @@ import {FILE_UPLOAD_DIRECTIVES, FileUploader} from 'ng2-file-upload';
 
 @Component({
   moduleId: module.id,
-  styleUrls: [`grad.css`],
+  styleUrls: [`../../public/css/styles.css`],
   // selector: 'monster-edit',
   templateUrl: 'grad-edit.component.html',
   directives: [FILE_UPLOAD_DIRECTIVES,REACTIVE_FORM_DIRECTIVES, UploadDemoComponent]

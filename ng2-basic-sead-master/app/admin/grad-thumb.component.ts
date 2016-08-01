@@ -4,10 +4,10 @@ import {GradModel} from './grad.model';
 @Component({
   moduleId: module.id,
   selector: 'grad-thumb',
-  styleUrls: [`grad.css`],
+  styleUrls: [`../../public/css/styles.css`],
   inputs: ['grad'],
   template: `
-          <section>
+          <section class="admin thumb">
             <p>{{grad.name}}</p>
             <a routerLink="/admin/{{grad.id}}/{{grad.name}}">
               <img class="imgGrad" [src]="grad.getImgUrlAfter()" onError="this.src='public/img/grad/generalAfter.png'" />
