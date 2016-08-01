@@ -31,7 +31,7 @@ import {GradModalComponent} from './grad-modal.component';
                                         <img class="img-responsive img-circle" src="public/img/home/team/after.jpg" alt="">                                
                                     </div>
                                     <div class="imgBefore img">
-                                        <img class="img-responsive img-circle" src="public/img/home/team/{{grad.name}}-before.jpg" alt="">
+                                        <img class="img-responsive img-circle" [src]="grad.getImgUrlAfter()" alt="">
                                     </div>
                                 </div>
                             </div>
