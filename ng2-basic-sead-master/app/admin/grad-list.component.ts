@@ -21,8 +21,8 @@ import {GradThumbComponent} from './grad-thumb.component';
       <grad-filter (filterChange)="filter = $event"></grad-filter>
 
       <a routerLink="/admin/edit" class="btn btn-primary">+ Add Grad</a>
-      <ul>
-        <li *ngFor="let grad of grads | filterBy:filter">
+      
+        <div *ngFor="let grad of grads | filterBy:filter">
           <div class="gradCont" *ngIf="grad.name">
             <grad-thumb [grad]="grad"></grad-thumb>
             <div class="text-center">
@@ -30,8 +30,7 @@ import {GradThumbComponent} from './grad-thumb.component';
               <a routerLink="/admin/edit/{{grad.id}}" class="btn btn-success">Edit</a>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
     </section>
 
 
