@@ -7,13 +7,13 @@ import { GradModel } from '../admin/grad.model';
     inputs: ['grad'],
     template: `
         <ul *ngIf="grad" class="list-inline social-buttons">
-            <li *ngIf="grad.github"><a href="{{grad.github}}"><i class="fa fa-github"></i></a>
+            <li *ngIf="grad.github"><a title="Visit My Github" href="{{grad.github}}"><i class="fa fa-github"></i></a>
             </li>
-            <li *ngIf="grad.facebook"><a href="{{grad.facebook}}"><i class="fa fa-facebook"></i></a>
+            <li *ngIf="grad.facebook"><a title="Visit My Facebook Page" href="{{grad.facebook}}"><i class="fa fa-facebook"></i></a>
             </li>
-            <li *ngIf="grad.linkedin"><a href="{{grad.linkedin}}"><i class="fa fa-linkedin"></i></a>
+            <li *ngIf="grad.linkedin"><a title="Visit My LinkedIn Page" href="{{grad.linkedin}}"><i class="fa fa-linkedin"></i></a>
             </li>
-            <li *ngIf="grad.gallery"><a href="{{grad.gallery}}"><i class="fa fa-th"></i></a>
+            <li *ngIf="grad.gallery"><a title="Visit My Gallery" href="{{grad.gallery}}"><i class="fa fa-th"></i></a>
             </li>
         </ul>
 

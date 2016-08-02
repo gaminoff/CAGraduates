@@ -4,7 +4,7 @@ import {GradModel} from './grad.model';
 @Component({
   moduleId: module.id,
   selector: 'grad-thumb',
-  styleUrls: [`../../public/css/styles.css`],
+  // styleUrls: [`../../public/css/styles.css`],
   inputs: ['grad'],
   template: `
           <section class="admin thumb">

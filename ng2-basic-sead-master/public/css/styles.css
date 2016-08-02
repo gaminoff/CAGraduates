@@ -2718,6 +2718,12 @@
           max-width: 50%;
           text-align: center; }
 
+@media (max-width: 780px) {
+  .grads-component-container grad-modal .gradDetails .modal .exitModal {
+    right: 0px; }
+  .grads-component-container grad-modal .gradDetails .modal .detailsCont .modalBox > * {
+    max-width: 80%; } }
+
 .grads-component-container aside.clients img {
   margin: 50px auto; }
 
@@ -2925,8 +2931,20 @@
     color: darkblue; }
 
 .admin.regForm {
+  justify-content: center;
   padding-top: 50px;
-  display: flex;
-  justify-content: center; }
-  .admin.regForm .widInp {
-    width: 550px; }
+  display: flex; }
+  .admin.regForm .formCont {
+    width: 100%; }
+    .admin.regForm .formCont .imgsInputCont {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 10px; }
+      .admin.regForm .formCont .imgsInputCont .imgInput {
+        margin-bottom: 5px; }
+  @media (min-width: 620px) {
+    .admin.regForm .formCont {
+      width: 600px; }
+      .admin.regForm .formCont .imgsInputCont {
+        flex-direction: row; } }

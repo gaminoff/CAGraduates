@@ -1,5 +1,5 @@
 <form [formGroup]="frmGrad" (submit)="saveToForm()" class=" admin regForm container">
-    <div>
+    <div class="formCont">
         <h1>Registration form</h1>
         <div class="form-group">
             <label>Name:</label>
@@ -59,12 +59,16 @@
             <p class="text-danger" *ngIf="frmGrad.controls.moto.dirty && frmGrad.controls.moto?.errors">Grad needs moto</p>
         </div>
 
-        <span>Before:</span><input #before type="file" ng2FileSelect [uploader]="uploader"/>
-        <span>After:</span><input #after type="file" (change)="hasAfter = true" ng2FileSelect [uploader]="uploader"/>
-
-        <span *ngFor="let item of uploader.queue">
-            {{ item?.file?.name }}
-        </span>
+        <div class="imgsInputCont">
+            <div class="imgInput">
+                <span>Before:</span>
+                <input type="file" ng2FileSelect [uploader]="uploader"/>
+            </div>
+            <div class="imgInput">
+                <span>After:</span>
+                <input type="file" (change)="hasAfter=true" ng2FileSelect [uploader]="uploader"/>
+            </div>
+        </div>
 
         <button type="submit" class="btn btn-default">Submit</button>
         <button type="cancel" class="btn btn-default">Cancel</button>

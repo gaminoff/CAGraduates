@@ -1,5 +1,7 @@
 /*$bgColor : lightblue;*/
 .admin{
+
+
   &.comp{
     width:100vw;
     display:flex;
@@ -9,8 +11,12 @@
         width:350px;
         height:350px;
       }
-    
   }
+
+
+
+
+
   &.thumb{
     .imgGrad {
       max-width: 100px;
@@ -43,18 +49,41 @@
       }
     }
   } 
-  &.regForm{
+
+  &.regForm {
+    justify-content: center;
     padding-top: 50px;
     display:flex;
-    justify-content: center;
 
-        .widInp{
-          width:550px;
+    .formCont {
+      width: 100% ;
+
+      .imgsInputCont {
+        display: flex ;
+        flex-direction: column ;
+        justify-content: space-between ;
+        margin-bottom: 10px ;
+        .imgInput {
+          margin-bottom: 5px ;
         }
+      }
+      
+    }
+
+    @media (min-width:620px) {
+      .formCont {
+        width: 600px ;
+        .imgsInputCont {
+          flex-direction: row ;
+        }
+      }
+    }
   }   
-  
 
 }
+
+
+
 // .sec {
 //   width:100vw;
 //   display:flex;

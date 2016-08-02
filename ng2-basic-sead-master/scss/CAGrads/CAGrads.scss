@@ -715,7 +715,26 @@
           }
         }
       }
+
+      @media (max-width: 780px) {
+        .gradDetails {
+          .modal {
+            .exitModal {
+              right: 0px ;
+            }
+            .detailsCont {
+              .modalBox {
+                & > * {
+                  max-width:  80% ;
+                }
+              }
+            }
+          }
+        }
+
+      }
     }
+
 
   // Clients Aside
 
