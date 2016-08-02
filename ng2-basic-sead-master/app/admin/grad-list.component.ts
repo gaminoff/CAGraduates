@@ -10,7 +10,7 @@ import {GradThumbComponent} from './grad-thumb.component';
 
 @Component({
   moduleId: module.id,
-  styleUrls: [`../../public/css/styles.css`],
+  // styleUrls: [`../../public/css/styles.css`],
   pipes: [FilterByPipe],
   directives: [GradFilterComponent, GradThumbComponent],
   // selector: 'monster-list',

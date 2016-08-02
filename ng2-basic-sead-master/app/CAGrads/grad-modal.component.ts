@@ -19,11 +19,13 @@ import { SocialBtnsComponent } from './social-btns.component';
                     <p class="">{{grad.details}}
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere officia tenetur aut in fugiat? Officia optio iure sapiente at molestiae doloribus maiores saepe odio asperiores, ut nesciunt similique quasi eligendi.
                     </p>
+                    <p>Cycle: {{grad.course}}</p>
                     <em *ngIf="grad.email" class="text-muted">{{grad.email}}</em>
                     <social-btns [grad]="grad"></social-btns>
                 </div>
             </div>
         </div>
+        
     `
 })
 export class GradModalComponent implements OnChanges {

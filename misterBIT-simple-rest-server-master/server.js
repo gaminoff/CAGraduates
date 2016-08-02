@@ -140,7 +140,6 @@ app.post('/data/:objType', upload.single('file'), function (req, res) {
     console.log('req.file---->', req.file);
     console.log('req.body---->', req.body);
     console.log('upload------>', upload);
-	console.log("Array:::", req.files);
    
 	const objType = req.params.objType;
     cl("POST for " + objType);
@@ -151,8 +150,8 @@ app.post('/data/:objType', upload.single('file'), function (req, res) {
     if (req.file) {
         obj.imgUrl = "http://localhost:3003/" + req.file.filename;
 		// obj.imgAfterUrl = "http://localhost:3003/" + req.files[1];
-
     }
+	console.log("obj--------->", obj);
 
 	dbConnect().then((db) => {
 		const collection = db.collection(objType);

@@ -18,6 +18,7 @@ export class GradEditComponent implements OnInit {
   private frmGrad: FormGroup;
   private gradToEdit: GradModel;
   public uploader:FileUploader;
+  private hasBefore = false ;
   private uploadedImgsUrls = { imgBefore: '', imgAfter: '' };
 
   constructor(private formBuilder: FormBuilder,
@@ -27,24 +28,20 @@ export class GradEditComponent implements OnInit {
       this.uploader = new FileUploader({url: gradService.url});
 
       this.uploader.onCompleteItem = (item, response) => {
+        console.log('uploaded file! ', item, response );
         response = JSON.parse(response);
-        // console.log('uploaded file!', item, response);
-        if (this.uploadedImgsUrls.imgBefore === '') 
-            this.uploadedImgsUrls.imgBefore = response.imgUrl ;
-        else this.uploadedImgsUrls.imgAfter = response.imgUrl ;
+        if ( this.uploader.getNotUploadedItems().length ) this.uploadedImgsUrls.imgBefore = response.imgUrl ;
+        else {
+          if ( this.hasBefore ) this.uploadedImgsUrls.imgBefore = response.imgUrl ;
+          else this.uploadedImgsUrls.imgAfter = response.imgUrl ;
+        } 
       };
 
       this.uploader.onCompleteAll = () => {
           (<FormControl>this.frmGrad.controls['imgBeforeUrl']).updateValue(this.uploadedImgsUrls.imgBefore);
           (<FormControl>this.frmGrad.controls['imgAfterUrl']).updateValue(this.uploadedImgsUrls.imgAfter);
           console.log('frmGrad', this.frmGrad.value);
-          const gradId = (this.gradToEdit)?  this.gradToEdit.id : undefined;    
-          this.gradService.save(this.frmGrad.value, gradId)
-            .then((grad: GradModel)=>{
-                const newGradId = grad.id ;
-                console.log('grad from save: ', newGradId);
-                this.router.navigate(['/admin']);
-            });  
+          this.save();
       };
   }
 
@@ -55,7 +52,7 @@ export class GradEditComponent implements OnInit {
         // This means EDIT mode
         if (id) {
           this.gradService.get(id)
-            .then((grad) =>{
+            .then((grad) => {
 
                 this.gradToEdit = grad;
                 console.log('in edit, ajax returned : ',  this.gradToEdit,  this.frmGrad.controls );
@@ -70,21 +67,29 @@ export class GradEditComponent implements OnInit {
                 (<FormControl>this.frmGrad.controls['moto']).updateValue(grad.moto);
                 (<FormControl>this.frmGrad.controls['imgBeforeUrl']).updateValue(grad.imgBeforeUrl);
                 (<FormControl>this.frmGrad.controls['imgAfterUrl']).updateValue(grad.imgAfterUrl);
+                this.uploadedImgsUrls = {
+                  imgBefore: grad.imgBeforeUrl,
+                  imgAfter: grad.imgAfterUrl
+                }
             });
         }
       });
   }
 
-  save() {
-    if (this.uploader.getNotUploadedItems().length) {
-        this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-          // form.append('newGradId', newGradId);
-          console.log('this.uploader', this.uploader);
-        };
-        this.uploader.uploadAll(); 
-    }
+  saveToForm() {
+    if (this.uploader.getNotUploadedItems().length) this.uploader.uploadAll(); 
+    else this.save();
   }
 
+  save() {
+    const gradId = (this.gradToEdit)?  this.gradToEdit.id : undefined;    
+          this.gradService.save(this.frmGrad.value, gradId)
+            .then((grad: GradModel)=>{
+                const newGradId = grad.id ;
+                console.log('grad from save: ', newGradId);
+                this.router.navigate(['/admin']);
+            });  
+  }
 
 
   prepareForm() {
