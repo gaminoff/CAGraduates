@@ -10,18 +10,22 @@ import { SocialBtnsComponent } from './social-btns.component';
     template: `
         <div *ngIf="grad" class="modalCont">
             <div [ngClass]="{opened: isOpen}" class="gradDetails">
-                <div class="detailsCont">
+                <div class="modal">
                     <button class="exitModal" (click)="closeModal()" >X</button>
-                    <h2>{{grad.name}}</h2>  
-                    <em class="text-muted">"{{grad.moto}}"</em>
-                    <img class="img-responsive" 
-                                    [src]="grad.imgAfterUrl? grad.imgAfterUrl:'../public/img/grad/no-profile.jpg'" alt="">
-                    <p class="">{{grad.details}}
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere officia tenetur aut in fugiat? Officia optio iure sapiente at molestiae doloribus maiores saepe odio asperiores, ut nesciunt similique quasi eligendi.
-                    </p>
-                    <p>Cycle: {{grad.course}}</p>
-                    <em *ngIf="grad.email" class="text-muted">{{grad.email}}</em>
-                    <social-btns [grad]="grad"></social-btns>
+                    <div class="detailsCont">
+                        <div class="modalBox">
+                            <h2>{{grad.name}}</h2>  
+                            <em class="text-muted">"{{grad.moto}}"</em>
+                            <img class="img-responsive" 
+                                            [src]="grad.imgAfterUrl? grad.imgAfterUrl:'../public/img/grad/no-profile.jpg'" alt="">
+                            <p class="">{{grad.details}}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere officia tenetur aut in fugiat? Officia optio iure sapiente at molestiae doloribus maiores saepe odio asperiores, ut nesciunt similique quasi eligendi.
+                            </p>
+                            <p>Cycle: {{grad.course}}</p>
+                            <em *ngIf="grad.email" class="text-muted">{{grad.email}}</em>
+                            <social-btns [grad]="grad"></social-btns>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

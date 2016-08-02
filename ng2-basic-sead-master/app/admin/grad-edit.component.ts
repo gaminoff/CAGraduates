@@ -18,7 +18,7 @@ export class GradEditComponent implements OnInit {
   private frmGrad: FormGroup;
   private gradToEdit: GradModel;
   public uploader:FileUploader;
-  private hasBefore = false ;
+  private hasAfter = false ;
   private uploadedImgsUrls = { imgBefore: '', imgAfter: '' };
 
   constructor(private formBuilder: FormBuilder,
@@ -32,8 +32,8 @@ export class GradEditComponent implements OnInit {
         response = JSON.parse(response);
         if ( this.uploader.getNotUploadedItems().length ) this.uploadedImgsUrls.imgBefore = response.imgUrl ;
         else {
-          if ( this.hasBefore ) this.uploadedImgsUrls.imgBefore = response.imgUrl ;
-          else this.uploadedImgsUrls.imgAfter = response.imgUrl ;
+          if ( this.hasAfter ) this.uploadedImgsUrls.imgAfter = response.imgUrl ;
+          else this.uploadedImgsUrls.imgBefore = response.imgUrl ;
         } 
       };
 
