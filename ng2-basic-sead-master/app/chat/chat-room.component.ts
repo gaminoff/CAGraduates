@@ -9,8 +9,10 @@ import {ChatRoomService} from './chat-room.service'
       <h2>{{"nickName"}}</h2>      
       <input #j (keyup.enter)="nick=j.value; j.value=''">
       <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
-      <input #i (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''">
-      <div *ngFor="let message of chatRoom.messages$ | async">
+      <div *ngIf="nick!==undefind">
+        <input #i (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''">
+      </div>
+      <div *ngFor="let message of chatRoom.messages$ | async" >
        {{message}}
       </div>
     `
