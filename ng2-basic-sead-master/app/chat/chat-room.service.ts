@@ -9,6 +9,7 @@ export class ChatRoomService{
   private socket$ : any;
   public connected$ : any;
   public messages$ : any;
+  public nickname$ :any
   
   public send$ = new Subject();
 
