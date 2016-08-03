@@ -2658,6 +2658,14 @@
     .grads-component-container #team .gradsCont .team-member p {
       margin-top: 0; }
 
+.grads-component-container grad-modal ::-webkit-scrollbar {
+  position: fixed;
+  width: 8px; }
+
+.grads-component-container grad-modal ::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3); }
+
 .grads-component-container grad-modal .gradDetails {
   z-index: 9999;
   position: fixed;
@@ -2948,3 +2956,10 @@
       width: 600px; }
       .admin.regForm .formCont .imgsInputCont {
         flex-direction: row; } }
+
+.chat-room-component p {
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }

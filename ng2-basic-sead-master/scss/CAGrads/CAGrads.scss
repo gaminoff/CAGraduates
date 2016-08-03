@@ -639,6 +639,19 @@
 
     // Grad Modal
     grad-modal {
+
+  
+      ::-webkit-scrollbar {
+          position: fixed ;
+          width: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+          border-radius: 8px;
+          background: rgba(0,0,0,0.3); 
+      }
+
+
    
       .gradDetails {
         z-index: 9999 ;

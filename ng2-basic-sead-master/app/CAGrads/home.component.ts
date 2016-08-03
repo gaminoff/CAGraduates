@@ -7,6 +7,7 @@ import { TeamComponent } from './team.component';
 import { ClientsComponent } from './clients.component';
 import { ContactComponent } from './contact.component';
 import { SocialBtnsComponent } from './social-btns.component';
+// import * as $ from 'node_modules/jquery/dist/jquery.min';
 
 @Component({
     moduleId: module.id,

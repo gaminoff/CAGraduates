@@ -13,7 +13,8 @@
     'rxjs':                       'node_modules/rxjs',
     'socket.io-client':           'node_modules/socket.io-client/socket.io.js',
     'socket.io-parser':           'node_modules/socket.io-parser/index.js',
-    'ng2-file-upload':            'node_modules/ng2-file-upload'  
+    'ng2-file-upload':            'node_modules/ng2-file-upload',
+    'jQuery':                     'node_modules/jQuery'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension

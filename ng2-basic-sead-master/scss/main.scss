@@ -2,11 +2,13 @@
 @import 'CAGrads/CAGrads';
 @import 'admin/admin';
 
+.chat-room-component {
 
-// @import 'admin/admin';
-
-
-// $badass: #bada55;
-// body { 
-//   background-color: $badass; 
-// }
+    p {
+        font-size: 100px ;
+        position: absolute ;
+        top: 50% ;
+        left: 50% ;    
+        transform: translate(-50%, -50%);
+    }
+}
