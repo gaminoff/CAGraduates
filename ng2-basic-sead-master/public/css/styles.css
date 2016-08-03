@@ -2300,7 +2300,7 @@
     background-color: white; }
 
 .grads-component-container .navbar-default {
-  background-color: #222;
+  background-color: transparent;
   border-color: transparent;
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8); }
   .grads-component-container .navbar-default .navbar-brand {
