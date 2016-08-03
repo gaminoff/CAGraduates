@@ -5,13 +5,25 @@
 //     left: 50% ;    
 // }
 .chat{
-     display: flex;
-    .chatInput{
-        &.chatNick{
+    display: flex;
+    justify-content:center;
+    text-align:center;
+    // max-width:500;
+    
+     .total{
+     
+                max-width:500;
+        .chatInput{
+            &.chatNick{
+
+            }
+            &.chatMessage{
+                width:500;
+            }
 
         }
-
-
-    }
-
+        .message{
+            max-width:50;
+        }
+     }
 }

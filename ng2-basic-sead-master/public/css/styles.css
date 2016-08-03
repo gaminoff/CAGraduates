@@ -2958,4 +2958,12 @@
         flex-direction: row; } }
 
 .chat {
-  display: flex; }
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+  .chat .total {
+    max-width: 500; }
+    .chat .total .chatInput.chatMessage {
+      width: 500; }
+    .chat .total .message {
+      max-width: 50; }

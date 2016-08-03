@@ -7,14 +7,14 @@ import {ChatRoomService} from './chat-room.service'
     `],
     template: `
     <div class="chat">
-      <div>
+      <div class="total">
         <h2>{{"nickName"}}</h2>      
         <input #j (keyup.enter)="nick=j.value; j.value=''" class="chatInput chatNick">
-        <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
         <div *ngIf="nick!==undefind">
+          <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
           <input #i (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''" class="chatInput chatMessage">
         </div>
-        <div *ngFor="let message of chatRoom.messages$ | async" >
+        <div *ngFor="let message of chatRoom.messages$ | async" class="message"  >
         {{message}}
         </div>
       </div>
