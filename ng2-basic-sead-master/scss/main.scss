@@ -1,14 +1,15 @@
 @import '../node_modules/font-awesome/scss/font-awesome';
 @import 'CAGrads/CAGrads';
 @import 'admin/admin';
+@import '../app/chat/chat-room.component';
 
-.chat-room-component {
+// .chat-room-component {
 
-    p {
-        font-size: 100px ;
-        position: absolute ;
-        top: 50% ;
-        left: 50% ;    
-        transform: translate(-50%, -50%);
-    }
-}
+//     p {
+//         font-size: 100px ;
+//         position: absolute ;
+//         top: 50% ;
+//         left: 50% ;    
+//         transform: translate(-50%, -50%);
+//     }
+// }

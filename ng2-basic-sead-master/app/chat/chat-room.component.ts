@@ -6,13 +6,19 @@ import {ChatRoomService} from './chat-room.service'
     *{font-family: Monaco, Consolas;}
     `],
     template: `
-      <h2>{{"nickName"}}</h2>      
-      <input #j (keyup.enter)="nick=j.value; j.value=''">
-      <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
-      <input #i (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''">
-      <div *ngFor="let message of chatRoom.messages$ | async">
-       {{message}}
+    <div class="chat">
+      <div class="total">
+        <h2>{{"nickName"}}</h2>      
+        <input #j (keyup.enter)="nick=j.value; j.value=''" class="chatInput chatNick">
+        <div *ngIf="nick!==undefind">
+          <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
+          <input #i (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''" class="chatInput chatMessage">
+        </div>
+        <div *ngFor="let message of chatRoom.messages$ | async" class="message"  >
+        {{message}}
+        </div>
       </div>
+    </div>
     `
 })
 export class ChatRoomComponent {

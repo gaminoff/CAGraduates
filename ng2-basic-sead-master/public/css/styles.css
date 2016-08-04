@@ -3070,9 +3070,13 @@
       .admin.regForm .formCont .imgsInputCont {
         flex-direction: row; } }
 
-.chat-room-component p {
-  font-size: 100px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+.chat {
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+  .chat .total {
+    max-width: 500; }
+    .chat .total .chatInput.chatMessage {
+      width: 500; }
+    .chat .total .message {
+      max-width: 50; }
