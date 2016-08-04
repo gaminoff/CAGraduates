@@ -3148,13 +3148,21 @@
       .admin.regForm .formCont .imgsInputCont {
         flex-direction: row; } }
 
-.chat {
+.chatRoom {
   display: flex;
-  justify-content: center;
-  text-align: center; }
-  .chat .total {
-    max-width: 500; }
-    .chat .total .chatInput.chatMessage {
-      width: 500; }
-    .chat .total .message {
-      max-width: 50; }
+  justify-content: space-between;
+  background-image: url(../../img/111111.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+  .chatRoom .chat {
+    display: flex;
+    justify-content: center;
+    text-align: center; }
+    .chatRoom .chat .total {
+      max-width: 500px; }
+      .chatRoom .chat .total .chatInput.chatMessage {
+        width: 500px; }
+      .chatRoom .chat .total .message {
+        width: 500px; }
