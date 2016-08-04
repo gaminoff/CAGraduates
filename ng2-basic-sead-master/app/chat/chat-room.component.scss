@@ -4,26 +4,37 @@
 //     top: 50% ;
 //     left: 50% ;    
 // }
-.chat{
-    display: flex;
-    justify-content:center;
-    text-align:center;
-    // max-width:500;
-    
-     .total{
-     
-                max-width:500px;
-        .chatInput{
-            &.chatNick{
+.chatRoom{
+        display:flex;
+         justify-content: space-between ;
+         background-image: url(../../img/111111.jpg);
+         background-repeat:no-repeat;
+         background-position: center;
+        background-size:cover;
+        background-attachment:fixed; 
+        //  background: transparent url(../../img/111.jpg) no-repeat 0 0;
 
-            }
-            &.chatMessage{
-                width:500px;
-            }
+            .chat{
+                display: flex;
+                justify-content:center;
+                text-align:center;
+                // max-width:500;
+                
+                .total{
+                
+                            max-width:500px;
+                    .chatInput{
+                        &.chatNick{
 
-        }
-        .message{
-            width:500px;
-        }
-     }
+                        }
+                        &.chatMessage{
+                            width:500px;
+                        }
+
+                    }
+                    .message{
+                        width:500px;
+                    }
+                }
+            }
 }
