@@ -286,6 +286,7 @@
       width: 100% ;
       height: 400px ;
       position: relative ;
+
       .graphCont {
         position: relative ;
         width: 100% ;
@@ -319,8 +320,10 @@
         .logosCont {
           opacity: 0.3 ;
           @include on-circle($item-count: 8, $circle-size: 50px, $item-size: 80px);
-          transform: rotate(-600deg);
+          // transform: rotate(-600deg) translate(-50%, -50%);
+          transform-origin: center ;
           transition: all 800ms ease-in-out ;
+          
           .skills {
             position: absolute ;
             z-index: 1 ;
@@ -330,10 +333,11 @@
               opacity: 0.6 ;
               width: 80px ;
               margin: 0 3px ;
-              transition: all 200ms ease-in-out ;
+              transition: all 300ms ease-in-out ;
               &:hover {
                 -webkit-filter: grayscale(0);
                 opacity: 1 ;
+                transform: rotate(360deg);
               }
             }
           }
@@ -342,12 +346,39 @@
           .logosCont {
             opacity: 1 ;
             @include on-circle($item-count: 8, $circle-size: 400px, $item-size: 80px);      
-            transform: rotate(0deg);
+            // transform: rotate(0deg) translate(-50%, -50%);
+            transform-origin: center ;
+          }
+        }
+      }
+      @media (max-width: 650px) {
+        .graphCont {
+          .mainBtn {
+            width: 200px ;
+            height: 200px ;
+          }
+          .logosCont {
+            opacity: 1 ;
+            @include on-circle($item-count: 8, $circle-size: 280px, $item-size: 40px); 
+            .skills {
+              img {
+                width: 40px ;
+                -webkit-filter: grayscale(0);
+                opacity: 1 ;
+              }              
+            }  
+          }
+          &:hover {
+            .logosCont {
+              @include on-circle($item-count: 8, $circle-size: 280px, $item-size: 40px);                           
+            }
           }
         }
       }
     }
   }
+
+  
 
   // @keyframes skills {
   //   0% {

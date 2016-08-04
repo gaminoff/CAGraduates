@@ -7,6 +7,7 @@ import { TeamComponent } from './team.component';
 import { ClientsComponent } from './clients.component';
 import { ContactComponent } from './contact.component';
 import { SocialBtnsComponent } from './social-btns.component';
+import { ScrollerDirective } from './preventScroll.directive';
 // import * as $ from 'node_modules/jquery/dist/jquery.min';
 
 @Component({
@@ -23,7 +24,8 @@ import { SocialBtnsComponent } from './social-btns.component';
                     TeamComponent,
                     ClientsComponent,
                     ContactComponent,
-                    SocialBtnsComponent
+                    SocialBtnsComponent,
+                    ScrollerDirective
                 ]
 })
 export class HomeComponent implements OnInit {

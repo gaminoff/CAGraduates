@@ -3,12 +3,13 @@ import { SocialBtnsComponent } from './social-btns.component';
 import {GradService} from '../admin/grad.service';
 import {GradModel} from '../admin/grad.model';
 import {GradModalComponent} from './grad-modal.component';
+import { ScrollerDirective } from './preventScroll.directive';
 
 
 @Component({
     moduleId: module.id,
     selector: 'team',
-    directives: [SocialBtnsComponent, GradModalComponent],
+    directives: [SocialBtnsComponent, GradModalComponent, ScrollerDirective],
     // templateUrl: 'team.component.html'
     template: `
         <section id="team" class="bg-light-gray">
@@ -51,6 +52,7 @@ export class TeamComponent implements OnInit { //, AfterViewChecked {
 
     private grads : GradModel[] ;
     private selectedGrad : GradModel ;
+    // private  gradClicked = false ;
     // @ViewChild(GradModalComponent) gradModal : GradModalComponent ;
     constructor(private gradService : GradService) { }
 
@@ -70,6 +72,7 @@ export class TeamComponent implements OnInit { //, AfterViewChecked {
     }
 
     openGradModal(grad) {
+        // this.gradClicked = true ;
         this.selectedGrad = grad ;
         console.log('modal!', this.selectedGrad);
 
