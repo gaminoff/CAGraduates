@@ -12,9 +12,11 @@ import {ChatRoomService} from './chat-room.service'
         <input #j (keyup.enter)="nick=j.value; j.value=''" class="chatInput chatNick">
         <div *ngIf="nick!==undefind">
           <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
-          <input #i (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''" class="chatInput chatMessage">
+          
+          <textarea #i  (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''" class="chatInput chatMessage">
+          </textarea>
         </div>
-        <div *ngFor="let message of chatRoom.messages$ | async" class="message"  >
+        <div  *ngFor="let message of chatRoom.messages$ | async" class="message"  >
         {{message}}
         </div>
       </div>
@@ -23,6 +25,7 @@ import {ChatRoomService} from './chat-room.service'
 })
 export class ChatRoomComponent {
   private nick:string;
+  // private mess:string;
     constructor(private chatRoom : ChatRoomService) {
       
     }

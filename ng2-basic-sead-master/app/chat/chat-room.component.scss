@@ -12,7 +12,7 @@
     
      .total{
      
-                max-width:500;
+                max-width:500px;
         .chatInput{
             &.chatNick{
 
@@ -23,7 +23,7 @@
 
         }
         .message{
-            max-width:50;
+            width:500px;
         }
      }
 }

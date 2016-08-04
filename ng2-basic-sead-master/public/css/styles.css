@@ -3075,8 +3075,8 @@
   justify-content: center;
   text-align: center; }
   .chat .total {
-    max-width: 500; }
+    max-width: 500px; }
     .chat .total .chatInput.chatMessage {
       width: 500; }
     .chat .total .message {
-      max-width: 50; }
+      width: 500px; }
