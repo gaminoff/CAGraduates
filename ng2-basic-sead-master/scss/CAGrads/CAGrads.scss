@@ -98,8 +98,14 @@
       @include script-font;
       padding: 5px ;
 
-      img {
-        height: 100% ;
+      .logoCont {
+        float: left ;
+        img {
+          height: 100% ;
+          &:last-child {
+            filter: hue-rotate(40deg);
+          }
+        }
       }
 
       &.active,
@@ -274,10 +280,96 @@
 
   // Services Section
 
-  .service-heading {
-    margin: 15px 0;
-    text-transform: none;
+  #skills {
+
+    .graphRow {
+      width: 100% ;
+      height: 400px ;
+      position: relative ;
+      .graphCont {
+        position: relative ;
+        width: 100% ;
+        height: 100% ;
+        // margin: 0 auto ;
+        // display: flex ;
+        // justify-content: center ;
+        & > * {
+          left: 50% ;
+          top: 50% ;
+          transform: translate(-50%, -50%);
+        }
+        .mainBtn {
+          position: absolute ;
+          width: 250px ;
+          height: 250px ;
+          border-radius: 50% ;
+          background: $brand-danger ;
+          box-shadow: 0px 0px 0px 3px #e74c3c inset, 0px 0px 0px 6px white inset;
+          padding: 5px ;
+          display: flex ;
+          justify-content: center ;
+          align-items: center ;
+          z-index: 99 ;
+          img {
+            max-width: 90% ;
+            max-height: 90% ;
+            -webkit-filter: brightness(20);
+          }
+        }
+        .logosCont {
+          opacity: 0.3 ;
+          @include on-circle($item-count: 8, $circle-size: 50px, $item-size: 80px);
+          transform: rotate(-600deg);
+          transition: all 800ms ease-in-out ;
+          .skills {
+            position: absolute ;
+            z-index: 1 ;
+            transition: all 800ms ease-in-out ; 
+            img {
+              -webkit-filter: grayscale(1);
+              opacity: 0.6 ;
+              width: 80px ;
+              margin: 0 3px ;
+              transition: all 200ms ease-in-out ;
+              &:hover {
+                -webkit-filter: grayscale(0);
+                opacity: 1 ;
+              }
+            }
+          }
+        }
+        &:hover {
+          .logosCont {
+            opacity: 1 ;
+            @include on-circle($item-count: 8, $circle-size: 400px, $item-size: 80px);      
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
   }
+
+  // @keyframes skills {
+  //   0% {
+  //     opacity: 0 ;
+  //     transform: rotate(-720deg);
+  //   }
+  //   80% {
+  //     opacity: 0.8 ;
+  //     transform: rotate(50deg);
+  //   }
+  //   87% {
+  //     opacity: 1 ;
+  //     transform: rotate(50deg);
+
+  //   }
+  //   92% {
+  //     transform: rotate(-15deg);
+  //   }
+  //   100% {
+  //     transform: rotate(0deg);
+  //   }
+  // }
 
   // Portfolio Section
 
@@ -606,6 +698,7 @@
               width: 100% ;
               height: 100% ;
               img {
+                box-shadow: 0px 0px 8px 2px rgba(100,100,100,0.2);
                 border: 7px solid white;
                 height: 100% ;
                 // padding-bottom: 100% ;
@@ -711,6 +804,7 @@
             height: 100% ;
             overflow-y: scroll ;
             margin: 0 auto ;
+            padding-top: 20px ;
 
     
             .modalBox {

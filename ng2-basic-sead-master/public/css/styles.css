@@ -2307,8 +2307,12 @@
     color: #fed136;
     font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
     padding: 5px; }
-    .grads-component-container .navbar-default .navbar-brand img {
-      height: 100%; }
+    .grads-component-container .navbar-default .navbar-brand .logoCont {
+      float: left; }
+      .grads-component-container .navbar-default .navbar-brand .logoCont img {
+        height: 100%; }
+        .grads-component-container .navbar-default .navbar-brand .logoCont img:last-child {
+          filter: hue-rotate(40deg); }
     .grads-component-container .navbar-default .navbar-brand.active, .grads-component-container .navbar-default .navbar-brand:active, .grads-component-container .navbar-default .navbar-brand:focus, .grads-component-container .navbar-default .navbar-brand:hover {
       color: #fec503; }
   .grads-component-container .navbar-default .navbar-collapse {
@@ -2423,9 +2427,116 @@
   .grads-component-container section {
     padding: 150px 0; } }
 
-.grads-component-container .service-heading {
-  margin: 15px 0;
-  text-transform: none; }
+.grads-component-container #skills .graphRow {
+  width: 100%;
+  height: 400px;
+  position: relative; }
+  .grads-component-container #skills .graphRow .graphCont {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .grads-component-container #skills .graphRow .graphCont > * {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+    .grads-component-container #skills .graphRow .graphCont .mainBtn {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: #e74c3c;
+      box-shadow: 0px 0px 0px 3px #e74c3c inset, 0px 0px 0px 6px white inset;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99; }
+      .grads-component-container #skills .graphRow .graphCont .mainBtn img {
+        max-width: 90%;
+        max-height: 90%;
+        -webkit-filter: brightness(20); }
+    .grads-component-container #skills .graphRow .graphCont .logosCont {
+      opacity: 0.3;
+      top: 50%;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      border-radius: 50%;
+      list-style: none;
+      transform: rotate(-600deg);
+      transition: all 800ms ease-in-out; }
+      .grads-component-container #skills .graphRow .graphCont .logosCont > * {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin: -40px; }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(1) {
+          transform: rotate(-90deg) translate(25px) rotate(90deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(2) {
+          transform: rotate(-45deg) translate(25px) rotate(45deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(3) {
+          transform: rotate(0deg) translate(25px) rotate(0deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(4) {
+          transform: rotate(45deg) translate(25px) rotate(-45deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(5) {
+          transform: rotate(90deg) translate(25px) rotate(-90deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(6) {
+          transform: rotate(135deg) translate(25px) rotate(-135deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(7) {
+          transform: rotate(180deg) translate(25px) rotate(-180deg); }
+        .grads-component-container #skills .graphRow .graphCont .logosCont > *:nth-of-type(8) {
+          transform: rotate(225deg) translate(25px) rotate(-225deg); }
+      .grads-component-container #skills .graphRow .graphCont .logosCont .skills {
+        position: absolute;
+        z-index: 1;
+        transition: all 800ms ease-in-out; }
+        .grads-component-container #skills .graphRow .graphCont .logosCont .skills img {
+          -webkit-filter: grayscale(1);
+          opacity: 0.6;
+          width: 80px;
+          margin: 0 3px;
+          transition: all 200ms ease-in-out; }
+          .grads-component-container #skills .graphRow .graphCont .logosCont .skills img:hover {
+            -webkit-filter: grayscale(0);
+            opacity: 1; }
+    .grads-component-container #skills .graphRow .graphCont:hover .logosCont {
+      opacity: 1;
+      top: 50%;
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      padding: 0;
+      border-radius: 50%;
+      list-style: none;
+      transform: rotate(0deg); }
+      .grads-component-container #skills .graphRow .graphCont:hover .logosCont > * {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin: -40px; }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(1) {
+          transform: rotate(-90deg) translate(200px) rotate(90deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(2) {
+          transform: rotate(-45deg) translate(200px) rotate(45deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(3) {
+          transform: rotate(0deg) translate(200px) rotate(0deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(4) {
+          transform: rotate(45deg) translate(200px) rotate(-45deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(5) {
+          transform: rotate(90deg) translate(200px) rotate(-90deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(6) {
+          transform: rotate(135deg) translate(200px) rotate(-135deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(7) {
+          transform: rotate(180deg) translate(200px) rotate(-180deg); }
+        .grads-component-container #skills .graphRow .graphCont:hover .logosCont > *:nth-of-type(8) {
+          transform: rotate(225deg) translate(200px) rotate(-225deg); }
 
 .grads-component-container #portfolio .portfolio-item {
   margin: 0 0 15px;
@@ -2642,6 +2753,7 @@
           width: 100%;
           height: 100%; }
           .grads-component-container #team .gradsCont .team-member .flipSpace .imgsCont .img img {
+            box-shadow: 0px 0px 8px 2px rgba(100, 100, 100, 0.2);
             border: 7px solid white;
             height: 100%;
             margin: auto;
@@ -2715,7 +2827,8 @@
       width: 100%;
       height: 100%;
       overflow-y: scroll;
-      margin: 0 auto; }
+      margin: 0 auto;
+      padding-top: 20px; }
       .grads-component-container grad-modal .gradDetails .modal .detailsCont .modalBox {
         top: 0;
         display: flex;
