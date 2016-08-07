@@ -13,15 +13,17 @@ import {ChatRoomService} from './chat-room.service'
 
          
                   <div class="total">
-                    <button (click)="nick=undefind ; j.focus()">Disconnect</button>
+                    <button (click)="nick=undefined ;j.hidden=false; j.focus()">Disconnect</button>
                     <h2>{{(nick) ? "Well come "+ nick : "nickName"}}</h2>      
-                    <input #j (keyup.enter)="nick=j.value; j.value=''" class="chatInput chatNick" autofocus>
+                    <input #j (keyup.enter)="nick=j.value; j.value='' ; focusTo(i);j.hidden=true" class="chatInput chatNick" autofocus>
                     
-                    <div *ngIf="(nick!==undefind && nick!=='')">
+                    <div [hidden]="!nick">
                       <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
                       
-                      <textarea #i  (keyup.enter)="chatRoom.send$.next(nick +':' +i.value); i.value = ''" class="chatInput chatMessage" placeholder=" Type your message">
+                      <textarea #i  (keyup.enter)="chatRoom.send$.next(nick +':' +i.value);
+                         i.value = ''" class="chatInput chatMessage" placeholder=" Type your message">
                       </textarea>
+                      
                     </div>
                     <div  *ngFor="let message of chatRoom.messages$ | async" class="message"  >
                     {{message}}
@@ -38,5 +40,11 @@ export class ChatRoomComponent {
   // private mess:string;
     constructor(private chatRoom : ChatRoomService) {
       
+    }
+    focusTo(el) {
+      setTimeout(()=>{
+        el.focus();
+
+      }, 0);
     }
 }
