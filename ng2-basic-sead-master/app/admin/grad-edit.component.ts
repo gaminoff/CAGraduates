@@ -77,7 +77,8 @@ export class GradEditComponent implements OnInit {
   }
 
   saveToForm() {
-    if (this.uploader.getNotUploadedItems().length) this.uploader.uploadAll(); 
+    console.log('before if, save to form: ', this.uploader.getNotUploadedItems().length);
+    if (this.uploader.getNotUploadedItems().length) this.uploader.uploadAll();
     else this.save();
   }
 

@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class FilterByPipe implements PipeTransform {
   transform(list: any[], filter: any): any {
-    console.log('in filter', list);
+    // console.log('in filter', list);
     list = list.filter(item=>item.name);
     if (!list) return [];
     if (!filter) return list;
