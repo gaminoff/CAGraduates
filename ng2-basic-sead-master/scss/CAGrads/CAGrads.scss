@@ -8,6 +8,7 @@
   body {
     overflow-x: hidden;
     @include body-font;
+    // font-family: 'FiraSans';
   }
 
   .text-muted {
@@ -207,6 +208,7 @@
     .intro-text {
       padding-top: 100px;
       padding-bottom: 50px;
+      // background: rgba($brand-primary, 0.5);
 
       .intro-lead-in {
         @include serif-font;
@@ -218,6 +220,7 @@
 
       .intro-heading {
         @include heading-font;
+        // font-family: 'FiraSans';
         font-weight: 700;
         font-size: 50px;
         line-height: 50px;

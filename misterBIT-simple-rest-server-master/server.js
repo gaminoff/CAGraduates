@@ -49,7 +49,6 @@ const io 	= require('socket.io')(http);
 
 
 function dbConnect() {
-
 	return new Promise((resolve, reject) => {
 		// Connection URL
 		var url = 'mongodb://localhost:27017/seed';
@@ -124,22 +123,15 @@ app.delete('/data/:objType/:id', function (req, res) {
 			}
 			db.close();
 		});
-
 	});
-
-
-
 });
 
 // POST - adds 
 
 // app.post('/data/:objType', upload.array('file', 2), function (req, res) {
-
-
 app.post('/data/:objType', upload.single('file'), function (req, res) {
     console.log('req.file---->', req.file);
     console.log('req.body---->', req.body);
-    console.log('upload------>', upload);
    
 	const objType = req.params.objType;
     cl("POST for " + objType);
@@ -151,23 +143,24 @@ app.post('/data/:objType', upload.single('file'), function (req, res) {
         obj.imgUrl = "http://localhost:3003/" + req.file.filename;
 		// obj.imgAfterUrl = "http://localhost:3003/" + req.files[1];
     }
-	console.log("obj--------->", obj);
 
-	dbConnect().then((db) => {
-		const collection = db.collection(objType);
-
-		collection.insert(obj, (err, result) => {
-			if (err) {
-				cl(`Couldnt insert a new ${objType}`, err)
-				res.json(500, { error: 'Failed to add' })
-			} else {
-				cl(objType + " added");
-                res.json(obj);
-                db.close();
-			}
+	if (!req.file) {	
+		dbConnect().then((db) => {
+			const collection = db.collection(objType);
+			collection.insert(obj, (err, result) => {
+				if (err) {
+					cl(`Couldnt insert a new ${objType}`, err)
+					res.json(500, { error: 'Failed to add' })
+				} else {
+					cl(objType + " added");
+					res.json(obj);			
+				}
+			});
+			db.close();
 		});
-	});
-
+	} else {
+		res.json(obj);
+	}
 });
 
 // PUT - updates

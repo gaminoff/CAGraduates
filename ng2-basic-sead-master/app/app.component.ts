@@ -3,8 +3,6 @@ import { Router, NavigationStart } from '@angular/router';
 
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
-
-// import {MonsterService} from './monster/monster.service';
 import {GradService} from './admin/grad.service';
 import {ChatRoomService} from './chat/chat-room.service';
 
@@ -35,4 +33,4 @@ export class AppComponent implements OnInit {
         })
   }
 
-}
+} 

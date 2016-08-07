@@ -2190,6 +2190,10 @@
   overflow: visible;
   clip: auto; }
 
+@font-face {
+  font-family: 'FiraSans';
+  src: url("fonts/FiraSans/FiraSans-Regular.ttf") format("truetype"); }
+
 .grads-component-container body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif; }
