@@ -13,10 +13,10 @@ import {ChatRoomService} from './chat-room.service'
 
          
                   <div class="total">
-                    <button (click)="nick=undefined ;j.hidden=false; j.focus()">Disconnect</button>
+                    <button (click)="disc=nick+' '+'is'+' '+'disconnect';nick=undefined ;j.hidden=false; j.focus()">Disconnect</button>
                     <h2>{{(nick) ? "Well come "+ nick : "nickName"}}</h2>      
                     <input #j (keyup.enter)="nick=j.value; j.value='' ; focusTo(i);j.hidden=true" class="chatInput chatNick" autofocus>
-                    
+                    {{disc}}
                     <div [hidden]="!nick">
                       <h2>{{(chatRoom.connected$ | async) ? "Connected!" : "Disconnected..."}}</h2>
                       
@@ -37,6 +37,7 @@ import {ChatRoomService} from './chat-room.service'
 export class ChatRoomComponent {
   private nick:string;
   private mess:string;
+  private disc:string;
   // private mess:string;
     constructor(private chatRoom : ChatRoomService) {
       
