@@ -3160,6 +3160,9 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed; }
+  .chatRoom .live {
+    padding: 100px;
+    margin: 20px; }
   .chatRoom .chat {
     display: flex;
     justify-content: center;
